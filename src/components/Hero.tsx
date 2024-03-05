@@ -7,9 +7,9 @@ import { FaArrowDown } from "react-icons/fa";
 
 function Hero() {
   return (
-    <div className="flex justify-center items-center w-7/12 h-screen mx-auto max-w-1150">
+    <div className="container flex justify-center items-center w-full lg:max-w-[1150px] md:max-w-[960px] h-screen mx-auto">
       <div className="w-full">
-        <figure className="flex mb-6">
+        <figure className="flex mb-6 md:mb-5 sm:mb-[21.6px]">
           <a
             href="https://github.com/Luisfp0"
             target="_blank"
@@ -66,11 +66,11 @@ function Hero() {
             />
           </a>
         </figure>
-        <h1 className="font-normal text-6xl text-white mb-11">
+        <h1 className="font-normal lg:text-6xl md:text-5xl sm:text-[43.2px] text-white mb-11 md:mb-9 sm:mb-[27px]">
           I am Luís Fernando
         </h1>
         <Presentation />
-        <a className="flex justify-center items-center absolute bottom-0 ml-4 mb-4 bg-custom-orange h-70 w-70">
+        <a className="flex justify-center items-center absolute bottom-0 ml-4 mb-4 bg-custom-orange lg:h-70 lg:w-70 md:h-66.5 md:w-66.5 sm:h-[63px] sm:w-[63px]">
           <FaArrowDown color="white" className="h-4 w-4" />
         </a>
       </div>

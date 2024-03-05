@@ -12,14 +12,20 @@ module.exports = {
       },
       height: {
         70: "70px",
+        66.5: "66.5px",
       },
       width: {
         70: "70px",
+        66.5: "66.5px",
       },
       colors: {
         "custom-gray-dark": "#3c3c3c",
         "custom-gray": "#333232",
         "custom-orange": "#f26c4f",
+      },
+      screens: {
+        md: "992px",
+        lg: "1200px",
       },
     },
   },
