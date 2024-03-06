@@ -21,7 +21,7 @@ module.exports = {
       colors: {
         "custom-gray-dark": "#3c3c3c",
         "custom-gray": "#333232",
-        "custom-orange": "#f26c4f",
+        "custom-orange": "#d44729",
       },
       screens: {
         md: "992px",

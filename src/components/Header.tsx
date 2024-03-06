@@ -6,7 +6,7 @@ function Header() {
 
   return (
     <header
-      className={`bg-white flex items-center justify-center w-full sm:overflow-hidden lg:overflow-visible md:overflow-visible ${
+      className={`z-10 bg-white flex items-center justify-center w-full sm:overflow-hidden lg:overflow-visible md:overflow-visible ${
         menuOpen ? "h-64" : "h-14"
       } px-4 fixed top-0 transition-height duration-300`}
     >
