@@ -47,14 +47,14 @@ function AboutMe() {
           </dl>
           <hr className="mt-[16px] mb-[48px]"></hr>
           <div className="flex gap-5 text-white text-[14px]">
-            <a className="flex items-center justify-center bg-custom-orange py-[12px] px-[12px]">
+            <a className="flex items-center justify-center bg-custom-orange py-[12px] px-[20px]">
               <span>CONTACT ME</span>
               <FaArrowDown
                 color="white"
-                className="h-4 w-4 transform -rotate-90 ml-[10px]"
+                className="h-3 w-3 transform -rotate-90 ml-[10px]"
               />
             </a>
-            <a className="flex items-center justify-center bg-transparent border-2 py-[12px] px-[12px]">
+            <a className="flex items-center justify-center bg-transparent border-2 py-[12px] px-[20px]">
               <FaDownload color="white" className="h-4 w-4 mr-[10px]" />
               <span>DOWNLOAD CV</span>
             </a>

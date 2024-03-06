@@ -70,7 +70,7 @@ function Hero() {
           I am Luís Fernando
         </h1>
         <Presentation />
-        <a className="flex justify-center items-center absolute bottom-0 ml-4 mb-4 bg-custom-orange lg:h-70 lg:w-70 md:h-66.5 md:w-66.5 sm:h-[63px] sm:w-[63px]">
+        <a className="flex justify-center items-center absolute bottom-0 mb-4 bg-custom-orange lg:h-70 lg:w-70 md:h-66.5 md:w-66.5 sm:h-[63px] sm:w-[63px]">
           <FaArrowDown color="white" className="h-4 w-4" />
         </a>
       </div>

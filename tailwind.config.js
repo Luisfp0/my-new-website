@@ -20,7 +20,7 @@ module.exports = {
       },
       colors: {
         "custom-gray-dark": "#3c3c3c",
-        "custom-gray": "#333232",
+        "custom-gray": "#020312",
         "custom-orange": "#d44729",
       },
       screens: {

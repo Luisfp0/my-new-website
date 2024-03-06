@@ -9,17 +9,13 @@ function App() {
     backgroundSize: "cover",
     backgroundPosition: "center",
   };
-
   return (
     <>
-      <section
-        className="w-screen h-screen flex flex-col"
-        style={backgroundStyle}
-      >
+      <section style={backgroundStyle} className="h-screen flex flex-col">
         <Header />
         <Hero />
       </section>
-      <section className="w-screen pt-[130px] pb-[24px] flex flex-col bg-custom-gray">
+      <section className="flex flex-col pt-[130px] pb-[24px] bg-custom-gray">
         <AboutMe />
       </section>
     </>
