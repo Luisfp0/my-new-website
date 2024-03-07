@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Perfil from "../src/assets/img/perfil.jpeg";
 import AboutMe from "../src/components/AboutMe";
 import HireMe from "../src/components/HireMe";
+import MySkills from "./components/MySkills";
 
 function App() {
   const backgroundStyle = {
@@ -21,6 +22,9 @@ function App() {
       </section>
       <section className="flex py-[130px] bg-custom-gray">
         <HireMe />
+      </section>
+      <section className="flex py-[130px] bg-custom-gray lg:pt-[130px] lg:pb-[48px]">
+        <MySkills />
       </section>
     </>
   );
