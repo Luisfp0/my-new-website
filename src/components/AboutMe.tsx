@@ -1,5 +1,4 @@
 import { FaArrowDown, FaDownload } from "react-icons/fa";
-
 import Retract from "../assets/img/retract.jpeg";
 
 function AboutMe() {
@@ -16,11 +15,15 @@ function AboutMe() {
       </div>
       <div className="flex h-[547px]">
         <div className="w-3/6 h-full" style={backgroundStyle}></div>
-        <div className="w-3/6 flex flex-col justify-center px-8">
-          <h4 className="w-[120px] text-center mb-4 text-lg text-white border-[3px] border-solid border-white py-3 px-4">
+        <div className="w-3/6 flex flex-col justify-center px-8 relative">
+          <div className="absolute left-15 top-[65px] bg-white animate-borderTopAnim"></div>
+          <div className="absolute left-[152px] top-[65px] bg-white animate-borderRightAnim"></div>
+          <div className="absolute left-15 top-[65px] bg-white animate-borderLeftAnim"></div>
+          <div className="absolute left-15 top-[116px] bg-white animate-borderBottonAnim"></div>
+          <h4 className="w-[120px] text-center mb-4 text-lg text-white border-solid border-white py-3 px-4 relative">
             Hi there
           </h4>
-          <div className="relative bottom-[18px] left-[25px] w-0 h-0 border-solid border-white border-b-[10px] border-l-[10px] border-l-transparent transform rotate-180"></div>{" "}
+          <div className="absolute top-[117px] left-[50px] w-0 h-0 border-solid border-white border-l-transparent transform rotate-180 animate-slideDownBorder"></div>
           <p className="text-white opacity-50 mb-4">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Consequatur ex quis eaque incidunt ut in laboriosam ea expedita
