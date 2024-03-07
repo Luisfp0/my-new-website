@@ -16,7 +16,7 @@ function App() {
         <Header />
         <Hero />
       </section>
-      <section className="flex flex-col pt-[130px] pb-[24px] bg-custom-gray">
+      <section className="flex flex-col lg:pt-[130px] lg:pb-[24px] md:pb-[23px] md:pt-[95px] sm:pb-[22px] sm:pt-[72px] bg-custom-gray">
         <AboutMe />
       </section>
       <section className="flex py-[130px] bg-custom-gray">

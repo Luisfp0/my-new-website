@@ -7,7 +7,7 @@ import { FaArrowDown } from "react-icons/fa";
 
 function Hero() {
   return (
-    <div className="container flex justify-center items-center w-full lg:max-w-[1150px] md:max-w-[960px] h-screen mx-auto">
+    <div className="container flex justify-center items-center w-full lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] h-screen mx-auto">
       <div className="w-full">
         <figure className="flex mb-6 md:mb-5 sm:mb-[21.6px]">
           <a

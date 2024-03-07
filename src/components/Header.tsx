@@ -10,7 +10,7 @@ function Header() {
         menuOpen ? "h-64" : "h-14"
       } fixed transition-height duration-300`}
     >
-      <div className="container flex items-center justify-between  bg-blue w-full lg:max-w-[1150px] md:max-w-[960px] ">
+      <div className="container flex items-center justify-between  bg-blue w-full lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px]">
         <a
           className={`absolute overflow-visible mt-10 transition-transform ${
             menuOpen ? "translate-y-24" : "translate-y-30"

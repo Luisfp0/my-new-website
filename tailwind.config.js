@@ -24,6 +24,7 @@ module.exports = {
         "custom-orange": "#d44729",
       },
       screens: {
+        sm: "768px",
         md: "992px",
         lg: "1200px",
       },
@@ -34,21 +35,21 @@ module.exports = {
         },
         borderRightAnim: {
           "0%": { width: "0px", height: "0px" },
-          "100%": { width: "1px", height: "52px" },
+          "100%": { width: "1px", height: "59px" },
         },
         borderLeftAnim: {
           "0%": { width: "0px", height: "0px" },
-          "100%": { width: "1px", height: "52px" },
+          "100%": { width: "1px", height: "60px" },
         },
         borderBottonAnim: {
           "0%": { width: "0px", height: "0px" },
-          "100%": { width: "120px", height: "1px" },
+          "100%": { width: "121px", height: "1px" },
         },
         slideDownBorder: {
           "0%": { borderBottomWidth: "0", borderLeftWidth: "0" },
           "100%": {
-            borderBottomWidth: "7px",
-            borderLeftWidth: "7px",
+            borderBottomWidth: "9px",
+            borderLeftWidth: "9px",
           },
         },
       },
