@@ -12,7 +12,7 @@ function Header() {
     >
       <div className="container flex items-center justify-between h-full bg-blue w-full lg:max-w-[1150px] md:max-w-[960px] ">
         <a
-          className={`absolute overflow-visible mt-10 transition-transform ${
+          className={`z-1 absolute overflow-visible mt-10 transition-transform ${
             menuOpen ? "translate-y-24" : "translate-y-30"
           }`}
           style={{ transitionDuration: "0.3s" }}

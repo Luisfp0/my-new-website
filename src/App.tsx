@@ -10,10 +10,13 @@ function App() {
   };
 
   return (
-    <div className="w-screen h-screen flex flex-col" style={backgroundStyle}>
-      <Header />
-      <Hero />
-    </div>
+    <>
+      <div className="w-screen h-screen flex flex-col" style={backgroundStyle}>
+        <Header />
+        <Hero />
+      </div>
+      <div className="w-screen h-screen"></div>
+    </>
   );
 }
 
