@@ -6,11 +6,11 @@ function Header() {
 
   return (
     <header
-      className={`bg-white flex items-center justify-center w-full sm:overflow-hidden lg:overflow-visible md:overflow-visible ${
+      className={`z-50 bg-white flex items-center justify-center w-full sm:overflow-hidden lg:overflow-visible md:overflow-visible ${
         menuOpen ? "h-64" : "h-14"
-      } px-4 fixed top-0 transition-height duration-300`}
+      } fixed transition-height duration-300`}
     >
-      <div className="container flex items-center justify-between h-full bg-blue w-full lg:max-w-[1150px] md:max-w-[960px] ">
+      <div className="container flex items-center justify-between  bg-blue w-full lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px]">
         <a
           className={`z-1 absolute overflow-visible mt-10 transition-transform ${
             menuOpen ? "translate-y-24" : "translate-y-30"
