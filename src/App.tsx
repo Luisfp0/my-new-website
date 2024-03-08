@@ -13,7 +13,7 @@ function App() {
   };
   return (
     <>
-      <section style={backgroundStyle} className="h-screen flex flex-col">
+      <section className="h-screen flex flex-col bg-custom-gray">
         <Header />
         <Hero />
       </section>

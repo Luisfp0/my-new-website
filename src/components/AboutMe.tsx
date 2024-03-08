@@ -1,10 +1,11 @@
 import { FaArrowDown, FaDownload } from "react-icons/fa";
 import Retract from "../assets/img/retract.jpeg";
+import example from "../assets/img/examplePerfilImage.jpg";
 
 function AboutMe() {
   const backgroundStyle = {
-    backgroundImage: `url(${Retract})`,
-    backgroundSize: "cover",
+    backgroundImage: `url(${example})`,
+    backgroundSize: "auto",
     backgroundPosition: "center",
   };
 
@@ -16,7 +17,7 @@ function AboutMe() {
         </h2>
       </div>
       <div className="flex h-[547px]">
-        <div className="w-3/6 h-full" style={backgroundStyle}></div>
+        <div className="w-[38%] h-[90%]" style={backgroundStyle}></div>
         <div className="w-3/6 flex flex-col justify-center px-8 relative">
           <div className="absolute bg-white animate-borderTopAnim lg:top-[75px] md:top-[68px] sm:top-[44px]"></div>
           <div className="absolute lg:left-[152px] lg:top-[75px] md:top-[68px] md:left-[152px] sm:left-[152px] sm:top-[44px] bg-white animate-borderRightAnim"></div>
