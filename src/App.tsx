@@ -13,22 +13,19 @@ function App() {
   };
   return (
     <>
-      <>
       <section style={backgroundStyle} className="h-screen flex flex-col">
-          <Header />
-          <Hero />
-        </section>
+        <Header />
+        <Hero />
+      </section>
       <section className="flex flex-col lg:pt-[130px] lg:pb-[24px] md:pb-[23px] md:pt-[95px] sm:pb-[22px] sm:pt-[72px] bg-custom-gray">
         <AboutMe />
       </section>
       <section className="flex py-[130px] bg-custom-gray">
         <HireMe />
       </section>
-      <section className="flex py-[130px] bg-custom-gray lg:pt-[130px] lg:pb-[48px]">
+      <section className="flex bg-custom-gray lg:pt-[130px] lg:pb-[48px] md:pt-[130px] md:pb-[48px] sm:pb-[43px]">
         <MySkills />
       </section>
-    </>
-      <div className="w-screen h-screen"></div>
     </>
   );
 }
