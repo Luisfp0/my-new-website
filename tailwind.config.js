@@ -30,20 +30,20 @@ module.exports = {
       },
       keyframes: {
         borderTopAnim: {
-          "0%": { width: "0px", height: "0px" },
-          "100%": { width: "120px", height: "1px" },
+          "0%": { width: "0px", height: "2px" },
+          "100%": { width: "120px", height: "2px" },
         },
         borderRightAnim: {
-          "0%": { width: "0px", height: "0px" },
-          "100%": { width: "1px", height: "59px" },
+          "0%": { width: "2px", height: "0px" },
+          "100%": { width: "2px", height: "59px" },
         },
         borderLeftAnim: {
-          "0%": { width: "0px", height: "0px" },
-          "100%": { width: "1px", height: "60px" },
+          "0%": { width: "2px", height: "0px" },
+          "100%": { width: "2px", height: "60px" },
         },
         borderBottonAnim: {
-          "0%": { width: "0px", height: "0px" },
-          "100%": { width: "121px", height: "1px" },
+          "0%": { width: "0px", height: "2px" },
+          "100%": { width: "121px", height: "2px" },
         },
         slideDownBorder: {
           "0%": { borderBottomWidth: "0", borderLeftWidth: "0" },
@@ -52,6 +52,31 @@ module.exports = {
             borderLeftWidth: "9px",
           },
         },
+
+        borderTopTwoAnim: {
+          "0%": { width: "0px", height: "2px" },
+          "100%": { width: "160px", height: "2px" },
+        },
+        borderRightTwoAnim: {
+          "0%": { width: "2px", height: "0px" },
+          "100%": { width: "2px", height: "56px" },
+        },
+        borderLeftTwoAnim: {
+          "0%": { width: "2px", height: "0px" },
+          "100%": { width: "2px", height: "56px" },
+        },
+        borderBottonTwoAnim: {
+          "0%": { width: "0px", height: "2px" },
+          "100%": { width: "160px", height: "2px" },
+        },
+        slideDownTwoBorder: {
+          "0%": { borderBottomWidth: "0", borderLeftWidth: "0" },
+          "100%": {
+            borderBottomWidth: "9px",
+            borderLeftWidth: "9px",
+          },
+        },
+
         fullWidthAnim: {
           "0%": { width: "0px", height: "2px" },
           "100%": { width: "95%", height: "2px" },
@@ -69,20 +94,30 @@ module.exports = {
           "100%": { width: "60%", height: "2px" },
         },
         boxSlideFull: {
-          "0%": { right: '550px' },
-          "100%": { right: '45px' },
+          "0%": { right: "550px" },
+          "100%": { right: "45px" },
         },
         boxSlideEighty: {
-          "0%": { right: '550px' },
-          "100%": { right: '125px' },
+          "0%": { right: "550px" },
+          "100%": { right: "125px" },
         },
         boxSlideNinety: {
-          "0%": { right: '550px' },
-          "100%": { right: '70px' },
+          "0%": { right: "550px" },
+          "100%": { right: "70px" },
         },
         boxSlideSixty: {
-          "0%": { right: '550px' },
-          "100%": { right: '230px' },
+          "0%": { right: "550px" },
+          "100%": { right: "230px" },
+        },
+        borderTopRight: {
+          "0%": { width: "0%", height: "0" },
+          "50%": { width: "100%", height: "0" },
+          "100%": { width: "100%", height: "100%" },
+        },
+        borderBottomLeft: {
+          "0%": { width: "0%", height: "0" },
+          "50%": { width: "100%", height: "0" },
+          "100%": { width: "100%", height: "100%" },
         },
       },
       animation: {
@@ -90,6 +125,10 @@ module.exports = {
         borderTopAnim: "borderTopAnim 0.5s linear forwards",
         borderRightAnim: "borderRightAnim 0.5s linear forwards 0.49s",
         borderBottonAnim: "borderBottonAnim 0.5s linear forwards 0.49s",
+        borderLeftTwoAnim: "borderLeftTwoAnim 0.5s linear forwards",
+        borderTopTwoAnim: "borderTopTwoAnim 0.5s linear forwards",
+        borderRightTwoAnim: "borderRightTwoAnim 0.5s linear forwards 0.49s",
+        borderBottonTwoAnim: "borderBottonTwoAnim 0.5s linear forwards 0.49s",
         slideDownBorder: "slideDownBorder 0.5s ease forwards 0.6s",
         fullWidthAnim: "fullWidthAnim 1s linear forwards",
         eightWidthAnim: "eightWidthAnim 1s linear forwards",

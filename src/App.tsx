@@ -4,6 +4,7 @@ import Perfil from "../src/assets/img/perfil.jpeg";
 import AboutMe from "../src/components/AboutMe";
 import HireMe from "../src/components/HireMe";
 import MySkills from "./components/MySkills";
+import Contact from "./components/Contact";
 
 function App() {
   const backgroundStyle = {
@@ -25,6 +26,9 @@ function App() {
       </section>
       <section className="flex bg-custom-gray lg:pt-[130px] lg:pb-[48px] md:pt-[130px] md:pb-[48px] sm:pb-[43px]">
         <MySkills />
+      </section>
+      <section className="bg-custom-gray flex pt-[130px] pb-[130px]">
+        <Contact />
       </section>
     </>
   );
