@@ -3,7 +3,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
 import Presentation from "./Presentation";
-import { FaArrowDown } from "react-icons/fa";
+import mouseImage from "../assets/img/mouse.svg";
 
 function Hero() {
   return (
@@ -70,8 +70,12 @@ function Hero() {
           I am Luís Fernando
         </h1>
         <Presentation />
-        <a className="flex justify-center items-center absolute bottom-0 mb-4 bg-custom-orange lg:h-70 lg:w-70 md:h-66.5 md:w-66.5 sm:h-[63px] sm:w-[63px]">
-          <FaArrowDown color="white" className="h-4 w-4" />
+        <a className="flex justify-center items-center absolute bottom-10 animate-bounceSlow ">
+          <img
+            src={mouseImage}
+            alt="Scrow down mouse"
+            className="stroke-[4px]"
+          />
         </a>
       </div>
     </div>
