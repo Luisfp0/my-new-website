@@ -8,6 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FaArrowDown } from "react-icons/fa";
+import { forwardRef } from "react";
 
 type Inputs = {
   name: string;
@@ -16,7 +17,7 @@ type Inputs = {
   message: string;
 };
 
-function Contact() {
+const Contact = forwardRef<HTMLDivElement>((props, ref) => {
   const {
     register,
     handleSubmit,
@@ -25,7 +26,10 @@ function Contact() {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
   return (
-    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
+    <div
+      ref={ref}
+      className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] flex flex-col justify-center items-center mx-auto w-full px-[15px]"
+    >
       <div className="relative lg:mb-[80px]">
         <div className="absolute bg-white animate-borderTopTwoAnim lg:top-[0px] md:top-[68px] sm:top-[0px]"></div>
         <div className="absolute lg:left-[159px] lg:top-[0px] md:top-[68px] md:left-[152px] sm:left-[152px] sm:top-[44px] bg-white animate-borderRightTwoAnim"></div>
@@ -177,6 +181,6 @@ function Contact() {
       </div>
     </div>
   );
-}
+});
 
 export default Contact;

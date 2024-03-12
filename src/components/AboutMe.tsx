@@ -1,8 +1,8 @@
 import { FaArrowDown, FaDownload } from "react-icons/fa";
-import Retract from "../assets/img/retract.jpeg";
 import example from "../assets/img/examplePerfilImage.jpg";
+import { forwardRef } from "react";
 
-function AboutMe() {
+const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
   const backgroundStyle = {
     backgroundImage: `url(${example})`,
     backgroundSize: "auto",
@@ -10,7 +10,10 @@ function AboutMe() {
   };
 
   return (
-    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] mx-auto flex flex-col justify-center items-center">
+    <div
+      ref={ref}
+      className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] mx-auto flex flex-col justify-center items-center"
+    >
       <div className="flex justify-center mb-8">
         <h2 className="text-3xl text-white sm:text-[27px] lg:text-[36px] md:text-[30px]">
           About Me
@@ -73,6 +76,6 @@ function AboutMe() {
       </div>
     </div>
   );
-}
+});
 
 export default AboutMe;

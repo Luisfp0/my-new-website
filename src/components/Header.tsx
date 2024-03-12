@@ -1,8 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../assets/img/logo.png";
 
-function Header() {
+interface HeaderProps {
+  isAboutMeInView: boolean;
+  isHomeInView: boolean;
+  isMySkillsInView: boolean;
+  isContactInView: boolean;
+}
+function Header(props: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => {
+    console.log(props.isContactInView);
+  }, [props.isContactInView]);
 
   return (
     <header
@@ -64,12 +73,38 @@ function Header() {
             <a className="text-[12.6px] py-[7.2px]">Contact</a>
           </div>
         </div>
-        <div className="items-center justify-end h-full gap-7 w-full text-right hidden lg:flex md:flex">
-          <a className="lg:text-[14px] md:text-[13.3px]">Home</a>
-          <a className="lg:text-[14px] md:text-[13.3px]">About me</a>
-          <a className="lg:text-[14px] md:text-[13.3px]">Skills</a>
-          <a className="lg:text-[14px] md:text-[13.3px]">Portfolio</a>
-          <a className="lg:text-[14px] md:text-[13.3px]">Contact</a>
+        <div className="items-center justify-end h-full w-full text-right hidden lg:flex md:flex">
+          <a
+            className={`lg:text-[14px] md:text-[13.3px] lg:px-[27px] lg:py-[16px] ${
+              props.isHomeInView && "border-t-[2px] border-custom-orange"
+            }`}
+          >
+            Home
+          </a>
+          <a
+            className={`lg:text-[14px] md:text-[13.3px] lg:px-[15px] lg:py-[16px] ${
+              props.isAboutMeInView && "border-t-[2px] border-custom-orange"
+            }`}
+          >
+            About me
+          </a>
+          <a
+            className={`lg:text-[14px] md:text-[13.3px] lg:px-[30px] lg:py-[16px] ${
+              props.isMySkillsInView && "border-t-[2px] border-custom-orange"
+            }`}
+          >
+            Skills
+          </a>
+          {/* <a className="lg:text-[14px] md:text-[13.3px] lg:px-[8px] lg:py-[16px] border-t-[2px] border-custom-orange">
+            Portfolio
+          </a> */}
+          <a
+            className={`lg:text-[14px] md:text-[13.3px] lg:px-[21px] lg:py-[16px] ${
+              props.isContactInView && "border-t-[2px] border-custom-orange"
+            }`}
+          >
+            Contact
+          </a>
         </div>
       </div>
     </header>

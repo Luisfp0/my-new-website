@@ -1,13 +1,19 @@
-import { FaTwitterSquare } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
-import { FaGithubSquare } from "react-icons/fa";
-import Presentation from "./Presentation";
+import {
+  FaTwitterSquare,
+  FaLinkedin,
+  FaInstagramSquare,
+  FaGithubSquare,
+} from "react-icons/fa";
 import mouseImage from "../assets/img/mouse.svg";
+import { forwardRef } from "react";
+import Presentation from "./Presentation";
 
-function Hero() {
+const Hero = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <div className="container flex justify-center items-center w-full lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] h-screen mx-auto">
+    <div
+      ref={ref}
+      className="container flex justify-center items-center w-full lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] h-screen mx-auto"
+    >
       <div className="w-full">
         <figure className="flex mb-6 md:mb-5 sm:mb-[21.6px]">
           <a
@@ -71,15 +77,11 @@ function Hero() {
         </h1>
         <Presentation />
         <a className="flex justify-center items-center absolute bottom-10 animate-bounceSlow ">
-          <img
-            src={mouseImage}
-            alt="Scrow down mouse"
-            className="stroke-[4px]"
-          />
+          <img src={mouseImage} alt="Scrow down mouse" />
         </a>
       </div>
     </div>
   );
-}
+});
 
 export default Hero;
