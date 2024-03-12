@@ -73,38 +73,42 @@ function Header(props: HeaderProps) {
             <a className="text-[12.6px] py-[7.2px]">Contact</a>
           </div>
         </div>
-        <div className="items-center justify-end h-full w-full text-right hidden lg:flex md:flex">
-          <a
-            className={`lg:text-[14px] md:text-[13.3px] lg:px-[27px] lg:py-[16px] ${
+        <div className="items-center justify-end flex-grow h-full w-full text-right hidden lg:flex md:flex">
+          <div
+            className={`h-[56px] w-[100px] flex items-center justify-center ${
               props.isHomeInView && "border-t-[2px] border-custom-orange"
             }`}
           >
-            Home
-          </a>
-          <a
-            className={`lg:text-[14px] md:text-[13.3px] lg:px-[15px] lg:py-[16px] ${
+            <a className="lg:text-[14px] md:text-[13.3px]">Home</a>
+          </div>
+          <div
+            className={`h-[56px] w-[100px] flex items-center justify-center ${
               props.isAboutMeInView && "border-t-[2px] border-custom-orange"
             }`}
           >
-            About me
-          </a>
-          <a
-            className={`lg:text-[14px] md:text-[13.3px] lg:px-[30px] lg:py-[16px] ${
+            <a className="lg:text-[14px] md:text-[13.3px]">About me</a>
+          </div>
+          <div
+            className={`h-[56px] w-[100px] flex items-center justify-center ${
               props.isMySkillsInView && "border-t-[2px] border-custom-orange"
             }`}
           >
-            Skills
-          </a>
-          {/* <a className="lg:text-[14px] md:text-[13.3px] lg:px-[8px] lg:py-[16px] border-t-[2px] border-custom-orange">
-            Portfolio
-          </a> */}
-          <a
-            className={`lg:text-[14px] md:text-[13.3px] lg:px-[21px] lg:py-[16px] ${
+            <a className="lg:text-[14px] md:text-[13.3px]">Skills</a>
+          </div>
+          {/* <div
+            className={`h-[56px] w-[100px] flex items-center justify-center ${
+              props.isPortfolioInView && "border-t-[2px] border-custom-orange"
+            }`}
+          >
+            <a className="lg:text-[14px] md:text-[13.3px]">Portfolio</a>
+          </div> */}
+          <div
+            className={`h-[56px] w-[100px] flex items-center justify-center ${
               props.isContactInView && "border-t-[2px] border-custom-orange"
             }`}
           >
-            Contact
-          </a>
+            <a className="lg:text-[14px] md:text-[13.3px]">Contact</a>
+          </div>
         </div>
       </div>
     </header>
