@@ -8,7 +8,6 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FaArrowDown } from "react-icons/fa";
-import { forwardRef } from "react";
 
 type Inputs = {
   name: string;
@@ -17,7 +16,11 @@ type Inputs = {
   message: string;
 };
 
-const Contact = forwardRef<HTMLDivElement>((props, ref) => {
+interface ContactProps {
+  contactNavBreakRef: React.RefObject<HTMLDivElement>;
+}
+
+const Contact = (props: ContactProps) => {
   const {
     register,
     handleSubmit,
@@ -133,7 +136,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
             <div className="flex w-full">
               <div
                 className="flex flex-col px-[15px] w-[50%] mb-[24px]"
-                ref={ref}
+                ref={props.contactNavBreakRef}
               >
                 <label className="mb-[8px]">Name *</label>
                 <input
@@ -181,6 +184,6 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
       </div>
     </div>
   );
-});
+};
 
 export default Contact;

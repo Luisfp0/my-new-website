@@ -7,7 +7,7 @@ interface HeaderProps {
   isMySkillsInView: boolean;
   isContactInView: boolean;
   homeSectionRef: React.RefObject<HTMLDivElement>;
-  aboutSectionMeRef: React.RefObject<HTMLDivElement>;
+  aboutMeSectionRef: React.RefObject<HTMLDivElement>;
   mySkillsSectionRef: React.RefObject<HTMLDivElement>;
   contactSectionRef: React.RefObject<HTMLDivElement>;
 }
@@ -20,9 +20,7 @@ function Header(props: HeaderProps) {
   };
 
   const [menuOpen, setMenuOpen] = useState(false);
-  useEffect(() => {
-    console.log(props.isContactInView);
-  }, [props.isContactInView]);
+  useEffect(() => {}, [props.isContactInView]);
 
   return (
     <header
@@ -95,7 +93,7 @@ function Header(props: HeaderProps) {
             <a className="lg:text-[14px] md:text-[13.3px]">Home</a>
           </div>
           <div
-            onClick={() => handleScrollToSection(props.aboutSectionMeRef)}
+            onClick={() => handleScrollToSection(props.aboutMeSectionRef)}
             className={`h-[56px] w-[100px] flex items-center justify-center opacity-[0.5] cursor-pointer ${
               props.isAboutMeInView &&
               "border-t-[3px] border-custom-orange font-semibold transition-opacity ease-in duration-700 opacity-[1]"

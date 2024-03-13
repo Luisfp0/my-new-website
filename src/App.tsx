@@ -13,10 +13,10 @@ function App() {
   const [isMySkillsInView, setIsMySkillsInView] = useState(false);
   const [isContactInView, setIsContactInView] = useState(false);
 
-  const homeRef = useRef<HTMLDivElement>(null);
-  const aboutMeRef = useRef<HTMLDivElement>(null);
-  const mySkillsRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
+  const homeNavBreakRef = useRef<HTMLDivElement>(null);
+  const aboutMeNavBreakRef = useRef<HTMLDivElement>(null);
+  const mySkillsNavBreakRef = useRef<HTMLDivElement>(null);
+  const contactNavBreakRef = useRef<HTMLDivElement>(null);
 
   const homeSectionRef = useRef<HTMLDivElement>(null);
   const aboutMeSectionRef = useRef<HTMLDivElement>(null);
@@ -24,40 +24,40 @@ function App() {
   const contactSectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (homeRef.current) {
-      inView(homeRef.current, () => {
+    if (homeNavBreakRef.current) {
+      inView(homeNavBreakRef.current, () => {
         setIsHomeInView(true);
         return (leaveInfo) => setIsHomeInView(false);
       });
     }
-  }, [homeRef]);
+  }, [homeNavBreakRef]);
 
   useEffect(() => {
-    if (aboutMeRef.current) {
-      inView(aboutMeRef.current, () => {
+    if (aboutMeNavBreakRef.current) {
+      inView(aboutMeNavBreakRef.current, () => {
         setIsAboutMeInView(true);
         return (leaveInfo) => setIsAboutMeInView(false);
       });
     }
-  }, [aboutMeRef]);
+  }, [aboutMeNavBreakRef]);
 
   useEffect(() => {
-    if (mySkillsRef.current) {
-      inView(mySkillsRef.current, () => {
+    if (mySkillsNavBreakRef.current) {
+      inView(mySkillsNavBreakRef.current, () => {
         setIsMySkillsInView(true);
         return (leaveInfo) => setIsMySkillsInView(false);
       });
     }
-  }, [mySkillsRef]);
+  }, [mySkillsNavBreakRef]);
 
   useEffect(() => {
-    if (contactRef.current) {
-      inView(contactRef.current, () => {
+    if (contactNavBreakRef.current) {
+      inView(contactNavBreakRef.current, () => {
         setIsContactInView(true);
         return (leaveInfo) => setIsContactInView(false);
       });
     }
-  }, [contactRef]);
+  }, [contactNavBreakRef]);
 
   return (
     <>
@@ -71,11 +71,14 @@ function App() {
           isMySkillsInView={isMySkillsInView}
           isContactInView={isContactInView}
           homeSectionRef={homeSectionRef}
-          aboutSectionMeRef={aboutMeSectionRef}
+          aboutMeSectionRef={aboutMeSectionRef}
           mySkillsSectionRef={mySkillsSectionRef}
           contactSectionRef={contactSectionRef}
         />
-        <Hero homeRef={homeRef} aboutMeSectionRef={aboutMeSectionRef} />
+        <Hero
+          homeNavBreakRef={homeNavBreakRef}
+          aboutMeSectionRef={aboutMeSectionRef}
+        />
       </section>
       <section
         ref={aboutMeSectionRef}
@@ -83,7 +86,7 @@ function App() {
           "flex flex-col lg:pt-[130px] lg:pb-[24px] md:pb-[23px] md:pt-[95px] sm:pb-[22px] sm:pt-[72px] bg-custom-gray"
         }
       >
-        <AboutMe aboutMeRef={aboutMeRef} />
+        <AboutMe aboutMeNavBreakRef={aboutMeNavBreakRef} />
       </section>
       <section className={"flex py-[130px] bg-custom-gray "}>
         <HireMe />
@@ -94,13 +97,13 @@ function App() {
           "flex bg-custom-gray lg:pt-[130px] lg:pb-[48px] md:pt-[130px] md:pb-[48px] sm:pb-[43px]"
         }
       >
-        <MySkills mySkillsRef={mySkillsRef} />
+        <MySkills mySkillsNavBreakRef={mySkillsNavBreakRef} />
       </section>
       <section
         ref={contactSectionRef}
         className={"bg-custom-gray flex pt-[130px] pb-[130px]"}
       >
-        <Contact ref={contactRef} />
+        <Contact contactNavBreakRef={contactNavBreakRef} />
       </section>
     </>
   );

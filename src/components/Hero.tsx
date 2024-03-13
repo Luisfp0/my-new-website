@@ -8,7 +8,7 @@ import mouseImage from "../assets/img/mouse.svg";
 import Presentation from "./Presentation";
 
 interface HeroProps {
-  homeRef: React.RefObject<HTMLDivElement>;
+  homeNavBreakRef: React.RefObject<HTMLDivElement>;
   aboutMeSectionRef: React.RefObject<HTMLDivElement>;
 }
 
@@ -24,7 +24,7 @@ const Hero = (props: HeroProps) => {
       <div className="w-full">
         <figure
           className="flex mb-6 md:mb-5 sm:mb-[21.6px]"
-          ref={props.homeRef}
+          ref={props.homeNavBreakRef}
         >
           <a
             href="https://github.com/Luisfp0"

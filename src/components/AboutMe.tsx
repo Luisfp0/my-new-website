@@ -2,7 +2,7 @@ import { FaArrowDown, FaDownload } from "react-icons/fa";
 import example from "../assets/img/examplePerfilImage.jpg";
 
 interface AboutMeProps {
-  aboutMeRef: React.RefObject<HTMLDivElement>;
+  aboutMeNavBreakRef: React.RefObject<HTMLDivElement>;
 }
 
 const AboutMe = (props: AboutMeProps) => {
@@ -31,7 +31,7 @@ const AboutMe = (props: AboutMeProps) => {
           </h4>
           <div className="absolute lg:top-[130px] left-[50px] md:top-[127px] sm:top-[103px] w-0 h-0 border-solid border-white border-l-transparent transform rotate-180 animate-slideDownBorder"></div>
           <p
-            ref={props.aboutMeRef}
+            ref={props.aboutMeNavBreakRef}
             className="text-white opacity-50 mb-4 sm:text-[14.4px] sm:mb-[27px] mt-[15px]"
           >
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
