@@ -29,6 +29,9 @@ function App() {
   const skillsAnimRef = useRef<HTMLDivElement>(null);
   const [isSkillsAnimInView, setIsSkillsAnimInView] = useState(false);
 
+  const contactAnimRef = useRef<HTMLDivElement>(null);
+  const [isContactsAnimInView, setIsContactAnimInView] = useState(false);
+
   useEffect(() => {
     if (hiThereAnimRef.current) {
       inView(hiThereAnimRef.current, () => {
@@ -44,6 +47,15 @@ function App() {
       });
     }
   }, [skillsAnimRef]);
+
+  useEffect(() => {
+    if (contactAnimRef.current) {
+      inView(contactAnimRef.current, () => {
+        setIsContactAnimInView(true);
+        return (leaveInfo) => setIsContactAnimInView(false);
+      });
+    }
+  }, [contactAnimRef]);
 
   useEffect(() => {
     if (homeNavBreakRef.current) {
@@ -133,7 +145,11 @@ function App() {
         ref={contactSectionRef}
         className={"bg-custom-gray flex pt-[130px] pb-[130px]"}
       >
-        <Contact contactNavBreakRef={contactNavBreakRef} />
+        <Contact
+          contactAnimRef={contactAnimRef}
+          isContactsAnimInView={isContactsAnimInView}
+          contactNavBreakRef={contactNavBreakRef}
+        />
       </section>
     </>
   );

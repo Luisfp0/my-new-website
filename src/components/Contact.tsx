@@ -18,6 +18,8 @@ type Inputs = {
 
 interface ContactProps {
   contactNavBreakRef: React.RefObject<HTMLDivElement>;
+  contactAnimRef: React.RefObject<HTMLDivElement>;
+  isContactsAnimInView: boolean;
 }
 
 const Contact = (props: ContactProps) => {
@@ -40,8 +42,14 @@ const Contact = (props: ContactProps) => {
         </h4>
         <div className="absolute lg:top-[55px] left-[30px] md:top-[127px] sm:top-[103px] w-0 h-0 border-solid border-white border-l-transparent transform rotate-180 animate-slideDownBorder"></div>
       </div>
-      <div className="flex w-full text-white">
-        <div className="px-[15px] pb-[24px] w-[25%]">
+      <div className="flex w-full text-white" ref={props.contactAnimRef}>
+        <div
+          className={`px-[15px] pb-[24px] w-[25%] transition linear duration-700 ${
+            props.isContactsAnimInView
+              ? "opacity-[1] scale-100 -translate-y-5"
+              : "opacity-[0]"
+          }`}
+        >
           <img
             src={iconAdress}
             alt="Pin Icon"
@@ -53,7 +61,13 @@ const Contact = (props: ContactProps) => {
             <figure className="mb-[16px]">Brazil</figure>
           </div>
         </div>
-        <div className="px-[15px] pb-[24px] w-[25%]">
+        <div
+          className={`px-[15px] pb-[24px] w-[25%] transition linear duration-700 delay-100 ${
+            props.isContactsAnimInView
+              ? "opacity-[1] scale-100 -translate-y-5"
+              : "opacity-[0]"
+          }`}
+        >
           <img
             className="w-[40px] h-[40px] mb-[24px]"
             src={iconPhone}
@@ -65,7 +79,13 @@ const Contact = (props: ContactProps) => {
             <figure className="mb-[16px]">(62) 3567-5894</figure>
           </div>
         </div>
-        <div className="px-[15px] pb-[24px] w-[25%]">
+        <div
+          className={`px-[15px] pb-[24px] w-[25%] transition linear duration-700 delay-150 ${
+            props.isContactsAnimInView
+              ? "opacity-[1] scale-100 -translate-y-5"
+              : "opacity-[0]"
+          }`}
+        >
           <img
             src={envelope}
             alt="Envelope Icon"
@@ -76,7 +96,13 @@ const Contact = (props: ContactProps) => {
             <figure className="mb-[16px]">luis.oliveirabr1@gmail.com</figure>
           </div>
         </div>
-        <div className="px-[15px] pb-[24px] w-[25%]">
+        <div
+          className={`px-[15px] pb-[24px] w-[25%] transition linear duration-700 delay-200 ${
+            props.isContactsAnimInView
+              ? "opacity-[1] scale-100 -translate-y-5"
+              : "opacity-[0]"
+          }`}
+        >
           <img
             src={socialChat}
             alt="Social chat icon"

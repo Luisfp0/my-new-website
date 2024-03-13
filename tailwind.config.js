@@ -88,7 +88,7 @@ module.exports = {
         boxSlideEighty: "boxSlideEighty 1s linear forwards",
         boxSlideNinety: "boxSlideNinety 1s linear forwards",
         boxSlideSixty: "boxSlideSixty 1s linear forwards",
-        bounceSlow: "bounce 5s linear infinite",
+        bounceSlow: "bounce 3s linear infinite",
       },
     },
   },
