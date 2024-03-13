@@ -3,13 +3,41 @@ import example from "../assets/img/examplePerfilImage.jpg";
 
 interface AboutMeProps {
   aboutMeNavBreakRef: React.RefObject<HTMLDivElement>;
+  hiThereAnimRef: React.RefObject<HTMLDivElement>;
+  isHiThereAnimInView: boolean;
 }
 
 const AboutMe = (props: AboutMeProps) => {
+  console.log(props.isHiThereAnimInView);
   const backgroundStyle = {
     backgroundImage: `url(${example})`,
     backgroundSize: "auto",
     backgroundPosition: "center",
+  };
+
+  const topTransition = {
+    width: props.isHiThereAnimInView ? "120px" : "0px",
+    transition: "all 400ms ease-in",
+  };
+
+  const rightTransition = {
+    height: props.isHiThereAnimInView ? "62px" : "0px",
+    transition: `all 400ms ease-in ${props.isHiThereAnimInView && "400ms"}`,
+  };
+
+  const leftTransition = {
+    height: props.isHiThereAnimInView ? "62px" : "0px",
+    transition: "all 400ms ease-in",
+  };
+  const bottomTransition = {
+    width: props.isHiThereAnimInView ? "120px" : "0px",
+    transition: `all 400ms ease-in ${props.isHiThereAnimInView && "400ms"}`,
+  };
+
+  const slideDownBorder = {
+    borderBottomWidth: props.isHiThereAnimInView ? "9px" : "0px",
+    borderLeftWidth: props.isHiThereAnimInView ? "9px" : "0px",
+    transition: `all 400ms ease-in ${props.isHiThereAnimInView && "400ms"}`,
   };
 
   return (
@@ -22,14 +50,32 @@ const AboutMe = (props: AboutMeProps) => {
       <div className="flex h-[547px]">
         <div className="w-[38%] h-[90%]" style={backgroundStyle}></div>
         <div className="w-3/6 flex flex-col justify-center px-8 relative">
-          <div className="absolute bg-white animate-borderTopAnim lg:top-[70px] md:top-[68px] sm:top-[44px]"></div>
-          <div className="absolute lg:left-[152px] lg:top-[71px] md:top-[68px] md:left-[152px] sm:left-[152px] sm:top-[44px] bg-white animate-borderRightAnim"></div>
-          <div className="absolute lg:top-[71px] md:top-[68px] bg-white sm:left-[30px] sm:top-[44px] animate-borderLeftAnim"></div>
-          <div className="absolute lg:top-[129px] md:top-[127px] sm:top-[102px] bg-white animate-borderBottonAnim"></div>
-          <h4 className="w-[120px] text-center mb-4 sm:text-[21px] text-[24px] text-white border-solid border-white py-3 px-4 relative">
+          <div
+            style={topTransition}
+            className="h-[2px] absolute bg-white lg:top-[70px]"
+          ></div>
+          <div
+            style={rightTransition}
+            className={`absolute bg-white left-[150px] lg:top-[70px] md:top-[68px] w-[2px] sm:top-[44px]`}
+          ></div>
+          <div
+            style={leftTransition}
+            className="absolute lg:top-[71px] w-[2px] md:top-[68px] bg-white sm:left-[30px] sm:top-[44px]"
+          ></div>
+          <div
+            style={bottomTransition}
+            className={`absolute bg-white lg:top-[130px] h-[2px]`}
+          ></div>
+          <h4
+            ref={props.hiThereAnimRef}
+            className="w-[120px] text-center mb-4 sm:text-[21px] text-[24px] text-white border-solid border-white py-3 px-4 relative"
+          >
             Hi there
           </h4>
-          <div className="absolute lg:top-[130px] left-[50px] md:top-[127px] sm:top-[103px] w-0 h-0 border-solid border-white border-l-transparent transform rotate-180 animate-slideDownBorder"></div>
+          <div
+            style={slideDownBorder}
+            className="absolute lg:top-[133px] left-[50px] md:top-[127px] sm:top-[103px] w-0 h-0 border-solid border-white border-l-transparent transform rotate-180"
+          ></div>
           <p
             ref={props.aboutMeNavBreakRef}
             className="text-white opacity-50 mb-4 sm:text-[14.4px] sm:mb-[27px] mt-[15px]"

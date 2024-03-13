@@ -23,6 +23,17 @@ function App() {
   const mySkillsSectionRef = useRef<HTMLDivElement>(null);
   const contactSectionRef = useRef<HTMLDivElement>(null);
 
+  const hiThereAnimRef = useRef<HTMLDivElement>(null);
+  const [isHiThereAnimInView, setIsHiThereAnimInView] = useState(false);
+
+  useEffect(() => {
+    if (hiThereAnimRef.current) {
+      inView(hiThereAnimRef.current, () => {
+        setIsHiThereAnimInView(true);
+      });
+    }
+  }, [hiThereAnimRef]);
+
   useEffect(() => {
     if (homeNavBreakRef.current) {
       inView(homeNavBreakRef.current, () => {
@@ -86,7 +97,11 @@ function App() {
           "flex flex-col lg:pt-[130px] lg:pb-[24px] md:pb-[23px] md:pt-[95px] sm:pb-[22px] sm:pt-[72px] bg-custom-gray"
         }
       >
-        <AboutMe aboutMeNavBreakRef={aboutMeNavBreakRef} />
+        <AboutMe
+          hiThereAnimRef={hiThereAnimRef}
+          isHiThereAnimInView={isHiThereAnimInView}
+          aboutMeNavBreakRef={aboutMeNavBreakRef}
+        />
       </section>
       <section className={"flex py-[130px] bg-custom-gray "}>
         <HireMe />

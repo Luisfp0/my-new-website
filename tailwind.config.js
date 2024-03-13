@@ -2,6 +2,10 @@ module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      transitionProperty: {
+        height: "height",
+        width: "width",
+      },
       transitionDuration: {
         2000: "2000ms",
       },
