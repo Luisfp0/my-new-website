@@ -26,6 +26,9 @@ function App() {
   const hiThereAnimRef = useRef<HTMLDivElement>(null);
   const [isHiThereAnimInView, setIsHiThereAnimInView] = useState(false);
 
+  const skillsAnimRef = useRef<HTMLDivElement>(null);
+  const [isSkillsAnimInView, setIsSkillsAnimInView] = useState(false);
+
   useEffect(() => {
     if (hiThereAnimRef.current) {
       inView(hiThereAnimRef.current, () => {
@@ -33,6 +36,14 @@ function App() {
       });
     }
   }, [hiThereAnimRef]);
+
+  useEffect(() => {
+    if (skillsAnimRef.current) {
+      inView(skillsAnimRef.current, () => {
+        setIsSkillsAnimInView(true);
+      });
+    }
+  }, [skillsAnimRef]);
 
   useEffect(() => {
     if (homeNavBreakRef.current) {
@@ -112,7 +123,11 @@ function App() {
           "flex bg-custom-gray lg:pt-[130px] lg:pb-[48px] md:pt-[130px] md:pb-[48px] sm:pb-[43px]"
         }
       >
-        <MySkills mySkillsNavBreakRef={mySkillsNavBreakRef} />
+        <MySkills
+          skillsAnimRef={skillsAnimRef}
+          isSkillsAnimInView={isSkillsAnimInView}
+          mySkillsNavBreakRef={mySkillsNavBreakRef}
+        />
       </section>
       <section
         ref={contactSectionRef}
