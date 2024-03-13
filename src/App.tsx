@@ -18,6 +18,11 @@ function App() {
   const mySkillsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
+  const homeSectionRef = useRef<HTMLDivElement>(null);
+  const aboutMeSectionRef = useRef<HTMLDivElement>(null);
+  const mySkillsSectionRef = useRef<HTMLDivElement>(null);
+  const contactSectionRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (homeRef.current) {
       inView(homeRef.current, () => {
@@ -56,33 +61,45 @@ function App() {
 
   return (
     <>
-      <section className="h-screen flex flex-col bg-custom-gray">
+      <section
+        ref={homeSectionRef}
+        className="h-screen flex flex-col bg-custom-gray"
+      >
         <Header
           isAboutMeInView={isAboutMeInView}
           isHomeInView={isHomeInView}
           isMySkillsInView={isMySkillsInView}
           isContactInView={isContactInView}
+          homeSectionRef={homeSectionRef}
+          aboutSectionMeRef={aboutMeSectionRef}
+          mySkillsSectionRef={mySkillsSectionRef}
+          contactSectionRef={contactSectionRef}
         />
-        <Hero ref={homeRef} />
+        <Hero homeRef={homeRef} aboutMeSectionRef={aboutMeSectionRef} />
       </section>
       <section
+        ref={aboutMeSectionRef}
         className={
           "flex flex-col lg:pt-[130px] lg:pb-[24px] md:pb-[23px] md:pt-[95px] sm:pb-[22px] sm:pt-[72px] bg-custom-gray"
         }
       >
-        <AboutMe ref={aboutMeRef} />
+        <AboutMe aboutMeRef={aboutMeRef} />
       </section>
       <section className={"flex py-[130px] bg-custom-gray "}>
         <HireMe />
       </section>
       <section
+        ref={mySkillsSectionRef}
         className={
           "flex bg-custom-gray lg:pt-[130px] lg:pb-[48px] md:pt-[130px] md:pb-[48px] sm:pb-[43px]"
         }
       >
-        <MySkills ref={mySkillsRef} />
+        <MySkills mySkillsRef={mySkillsRef} />
       </section>
-      <section className={"bg-custom-gray flex pt-[130px] pb-[130px]"}>
+      <section
+        ref={contactSectionRef}
+        className={"bg-custom-gray flex pt-[130px] pb-[130px]"}
+      >
         <Contact ref={contactRef} />
       </section>
     </>

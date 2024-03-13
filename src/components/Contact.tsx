@@ -26,10 +26,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
   return (
-    <div
-      ref={ref}
-      className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] flex flex-col justify-center items-center mx-auto w-full px-[15px]"
-    >
+    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
       <div className="relative lg:mb-[80px]">
         <div className="absolute bg-white animate-borderTopTwoAnim lg:top-[0px] md:top-[68px] sm:top-[0px]"></div>
         <div className="absolute lg:left-[159px] lg:top-[0px] md:top-[68px] md:left-[152px] sm:left-[152px] sm:top-[44px] bg-white animate-borderRightTwoAnim"></div>
@@ -134,7 +131,10 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
           <h3 className="text-[30px] mb-[30px]">Send Me a Message</h3>
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
             <div className="flex w-full">
-              <div className="flex flex-col px-[15px] w-[50%] mb-[24px]">
+              <div
+                className="flex flex-col px-[15px] w-[50%] mb-[24px]"
+                ref={ref}
+              >
                 <label className="mb-[8px]">Name *</label>
                 <input
                   {...(register("name"), { required: true })}

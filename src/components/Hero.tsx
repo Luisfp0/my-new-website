@@ -5,17 +5,27 @@ import {
   FaGithubSquare,
 } from "react-icons/fa";
 import mouseImage from "../assets/img/mouse.svg";
-import { forwardRef } from "react";
 import Presentation from "./Presentation";
 
-const Hero = forwardRef<HTMLDivElement>((props, ref) => {
+interface HeroProps {
+  homeRef: React.RefObject<HTMLDivElement>;
+  aboutMeSectionRef: React.RefObject<HTMLDivElement>;
+}
+
+const Hero = (props: HeroProps) => {
+  const handleScrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div
-      ref={ref}
-      className="container flex justify-center items-center w-full lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] h-screen mx-auto"
-    >
+    <div className="container flex justify-center items-center w-full lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] h-screen mx-auto">
       <div className="w-full">
-        <figure className="flex mb-6 md:mb-5 sm:mb-[21.6px]">
+        <figure
+          className="flex mb-6 md:mb-5 sm:mb-[21.6px]"
+          ref={props.homeRef}
+        >
           <a
             href="https://github.com/Luisfp0"
             target="_blank"
@@ -76,12 +86,15 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => {
           I am Luís Fernando
         </h1>
         <Presentation />
-        <a className="flex justify-center items-center absolute bottom-10 animate-bounceSlow ">
+        <a
+          className="flex justify-center items-center absolute bottom-10 animate-bounceSlow cursor-pointer"
+          onClick={() => handleScrollToSection(props.aboutMeSectionRef)}
+        >
           <img src={mouseImage} alt="Scrow down mouse" />
         </a>
       </div>
     </div>
   );
-});
+};
 
 export default Hero;

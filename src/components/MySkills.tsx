@@ -1,13 +1,15 @@
-import { forwardRef } from "react";
+interface MySkillsProps {
+  mySkillsRef: React.RefObject<HTMLDivElement>;
+}
 
-const MySkills = forwardRef<HTMLDivElement>((props, ref) => {
+const MySkills = (props: MySkillsProps) => {
   return (
-    <div
-      ref={ref}
-      className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] flex flex-col justify-center items-center mx-auto w-full px-[15px]"
-    >
+    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
       <div className="w-full mb-[80px] sm:mb-[45px] text-center">
-        <h2 className="lg:text-[36px] md:text-[30.4px] mb-[8px] text-white sm:text-[27px]">
+        <h2
+          className="lg:text-[36px] md:text-[30.4px] mb-[8px] text-white sm:text-[27px]"
+          ref={props.mySkillsRef}
+        >
           My Skills
         </h2>
       </div>
@@ -77,6 +79,6 @@ const MySkills = forwardRef<HTMLDivElement>((props, ref) => {
       </div>
     </div>
   );
-});
+};
 
 export default MySkills;

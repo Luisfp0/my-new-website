@@ -1,8 +1,11 @@
 import { FaArrowDown, FaDownload } from "react-icons/fa";
 import example from "../assets/img/examplePerfilImage.jpg";
-import { forwardRef } from "react";
 
-const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
+interface AboutMeProps {
+  aboutMeRef: React.RefObject<HTMLDivElement>;
+}
+
+const AboutMe = (props: AboutMeProps) => {
   const backgroundStyle = {
     backgroundImage: `url(${example})`,
     backgroundSize: "auto",
@@ -10,10 +13,7 @@ const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
   };
 
   return (
-    <div
-      ref={ref}
-      className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] mx-auto flex flex-col justify-center items-center"
-    >
+    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] mx-auto flex flex-col justify-center items-center">
       <div className="flex justify-center mb-8">
         <h2 className="text-3xl text-white sm:text-[27px] lg:text-[36px] md:text-[30px]">
           About Me
@@ -22,15 +22,18 @@ const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
       <div className="flex h-[547px]">
         <div className="w-[38%] h-[90%]" style={backgroundStyle}></div>
         <div className="w-3/6 flex flex-col justify-center px-8 relative">
-          <div className="absolute bg-white animate-borderTopAnim lg:top-[75px] md:top-[68px] sm:top-[44px]"></div>
-          <div className="absolute lg:left-[152px] lg:top-[75px] md:top-[68px] md:left-[152px] sm:left-[152px] sm:top-[44px] bg-white animate-borderRightAnim"></div>
-          <div className="absolute lg:top-[75px] md:top-[68px] bg-white sm:left-[30px] sm:top-[44px] animate-borderLeftAnim"></div>
-          <div className="absolute lg:top-[134px] md:top-[127px] sm:top-[102px] bg-white animate-borderBottonAnim"></div>
+          <div className="absolute bg-white animate-borderTopAnim lg:top-[70px] md:top-[68px] sm:top-[44px]"></div>
+          <div className="absolute lg:left-[152px] lg:top-[71px] md:top-[68px] md:left-[152px] sm:left-[152px] sm:top-[44px] bg-white animate-borderRightAnim"></div>
+          <div className="absolute lg:top-[71px] md:top-[68px] bg-white sm:left-[30px] sm:top-[44px] animate-borderLeftAnim"></div>
+          <div className="absolute lg:top-[129px] md:top-[127px] sm:top-[102px] bg-white animate-borderBottonAnim"></div>
           <h4 className="w-[120px] text-center mb-4 sm:text-[21px] text-[24px] text-white border-solid border-white py-3 px-4 relative">
             Hi there
           </h4>
-          <div className="absolute lg:top-[135px] left-[50px] md:top-[127px] sm:top-[103px] w-0 h-0 border-solid border-white border-l-transparent transform rotate-180 animate-slideDownBorder"></div>
-          <p className="text-white opacity-50 mb-4 sm:text-[14.4px] sm:mb-[27px]">
+          <div className="absolute lg:top-[130px] left-[50px] md:top-[127px] sm:top-[103px] w-0 h-0 border-solid border-white border-l-transparent transform rotate-180 animate-slideDownBorder"></div>
+          <p
+            ref={props.aboutMeRef}
+            className="text-white opacity-50 mb-4 sm:text-[14.4px] sm:mb-[27px] mt-[15px]"
+          >
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             Consequatur ex quis eaque incidunt ut in laboriosam ea expedita
             molestiae, harum quisquam beatae perspiciatis. Corporis maiores
@@ -76,6 +79,6 @@ const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
       </div>
     </div>
   );
-});
+};
 
 export default AboutMe;
