@@ -33,14 +33,36 @@ const Contact = (props: ContactProps) => {
   return (
     <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
       <div className="relative lg:mb-[80px]">
-        <div className="absolute bg-white animate-borderTopTwoAnim lg:top-[0px] md:top-[68px] sm:top-[0px]"></div>
-        <div className="absolute lg:left-[159px] lg:top-[0px] md:top-[68px] md:left-[152px] sm:left-[152px] sm:top-[44px] bg-white animate-borderRightTwoAnim"></div>
-        <div className="absolute lg:top-[0px] lg:left-[0px] md:top-[68px] bg-white sm:left-[30px] sm:top-[44px] animate-borderLeftTwoAnim"></div>
-        <div className="absolute lg:top-[55px] md:top-[127px] sm:top-[102px] bg-white animate-borderBottonTwoAnim"></div>
+        <div
+          className={`${
+            props.isContactsAnimInView ? "w-[160px]" : "w-[0px]"
+          } transition-all linear duration-500 h-[2px] absolute bg-white lg:top-[0px] md:top-[68px] sm:top-[0px`}
+        ></div>
+        <div
+          className={`${
+            props.isContactsAnimInView ? "h-[56px] delay-500" : "h-[0px]"
+          } w-[2px] absolute lg:left-[159px] lg:top-[0px] md:top-[68px] md:left-[152px] sm:left-[152px] sm:top-[44px] bg-white transition-all linear duration-500`}
+        ></div>
+        <div
+          className={`${
+            props.isContactsAnimInView ? "h-[56px]" : "h-[0px]"
+          } w-[2px] absolute lg:left-[0px] lg:top-[0px] md:top-[68px] md:left-[152px] sm:left-[152px] sm:top-[44px] bg-white transition-all linear duration-500`}
+        ></div>
+        <div
+          className={`${
+            props.isContactsAnimInView ? "w-[160px] delay-500" : "w-[0px]"
+          } transition-all linear duration-500  h-[2px] absolute bg-white lg:top-[55px] md:top-[68px] sm:top-[0px] `}
+        ></div>
         <h4 className="w-[160px] text-center sm:text-[21px] text-[24px] text-white border-solid border-white py-3 px-4 relative">
           Get In Touch
         </h4>
-        <div className="absolute lg:top-[55px] left-[30px] md:top-[127px] sm:top-[103px] w-0 h-0 border-solid border-white border-l-transparent transform rotate-180 animate-slideDownBorder"></div>
+        <div
+          className={`${
+            props.isContactsAnimInView
+              ? "border-b-[9px] border-l-[9px] delay-500"
+              : "border-b-[0px] border-l-[0px]"
+          } transition-all linear duration-500  absolute lg:top-[56px] left-[30px] md:top-[127px] sm:top-[103px] w-0 h-0 border-solid border-white border-l-transparent transform rotate-180`}
+        ></div>
       </div>
       <div className="flex w-full text-white" ref={props.contactAnimRef}>
         <div

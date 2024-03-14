@@ -85,27 +85,27 @@ function Header(props: HeaderProps) {
         <div className="items-center justify-end flex-grow h-full w-full text-right hidden lg:flex md:flex">
           <div
             onClick={() => handleScrollToSection(props.homeSectionRef)}
-            className={`h-[56px] w-[100px] flex items-center justify-center opacity-[0.5] cursor-pointer ${
+            className={`h-[56px] w-[100px] border-t-[3px] flex items-center justify-center opacity-[0.5] cursor-pointer ${
               props.isHomeInView &&
-              "border-t-[3px] border-custom-orange font-semibold transition-opacity ease-in duration-700 opacity-[1]"
+              "border-custom-orange font-semibold transition-opacity ease-in duration-700 opacity-[1]"
             }`}
           >
             <a className="lg:text-[14px] md:text-[13.3px]">Home</a>
           </div>
           <div
             onClick={() => handleScrollToSection(props.aboutMeSectionRef)}
-            className={`h-[56px] w-[100px] flex items-center justify-center opacity-[0.5] cursor-pointer ${
+            className={`h-[56px] w-[100px] border-t-[3px] flex items-center justify-center opacity-[0.5] cursor-pointer ${
               props.isAboutMeInView &&
-              "border-t-[3px] border-custom-orange font-semibold transition-opacity ease-in duration-700 opacity-[1]"
+              "border-custom-orange font-semibold transition-opacity ease-in duration-700 opacity-[1]"
             }`}
           >
             <a className="lg:text-[14px] md:text-[13.3px]">About me</a>
           </div>
           <div
             onClick={() => handleScrollToSection(props.mySkillsSectionRef)}
-            className={`h-[56px] w-[100px] flex items-center justify-center opacity-[0.5] cursor-pointer ${
+            className={`h-[56px] w-[100px] border-t-[3px] flex items-center justify-center opacity-[0.5] cursor-pointer ${
               props.isMySkillsInView &&
-              "border-t-[3px] border-custom-orange font-semibold transition-opacity ease-in duration-700 opacity-[1]"
+              "border-custom-orange font-semibold transition-opacity ease-in duration-700 opacity-[1]"
             }`}
           >
             <a className="lg:text-[14px] md:text-[13.3px]">Skills</a>
@@ -119,9 +119,10 @@ function Header(props: HeaderProps) {
           </div> */}
           <div
             onClick={() => handleScrollToSection(props.contactSectionRef)}
-            className={`h-[56px] w-[100px] flex items-center justify-center opacity-[0.5] cursor-pointer ${
-              props.isContactInView &&
-              "border-t-[3px] border-custom-orange font-semibold transition-opacity ease-in duration-700 opacity-[1]"
+            className={`h-[56px] w-[100px] flex items-center border-t-[3px] justify-center cursor-pointer transition-opacity ease-in duration-700 ${
+              props.isContactInView
+                ? "border-custom-orange font-semibold opacity-[1]"
+                : "opacity-[0.5]"
             }`}
           >
             <a className="lg:text-[14px] md:text-[13.3px]">Contact</a>

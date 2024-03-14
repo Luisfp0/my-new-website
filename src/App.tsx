@@ -36,6 +36,7 @@ function App() {
     if (hiThereAnimRef.current) {
       inView(hiThereAnimRef.current, () => {
         setIsHiThereAnimInView(true);
+        return (leaveInfo) => setIsHiThereAnimInView(false);
       });
     }
   }, [hiThereAnimRef]);
@@ -44,6 +45,7 @@ function App() {
     if (skillsAnimRef.current) {
       inView(skillsAnimRef.current, () => {
         setIsSkillsAnimInView(true);
+        return (leaveInfo) => setIsSkillsAnimInView(false);
       });
     }
   }, [skillsAnimRef]);

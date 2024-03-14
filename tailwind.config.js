@@ -36,6 +36,30 @@ module.exports = {
         lg: "1200px",
       },
       keyframes: {
+        borderTopAnim: {
+          "0%": { width: "0px", height: "2px" },
+          "100%": { width: "120px", height: "2px" },
+        },
+        borderRightAnim: {
+          "0%": { width: "2px", height: "0px" },
+          "100%": { width: "2px", height: "59px" },
+        },
+        borderLeftAnim: {
+          "0%": { width: "2px", height: "0px" },
+          "100%": { width: "2px", height: "60px" },
+        },
+        borderBottonAnim: {
+          "0%": { width: "0px", height: "2px" },
+          "100%": { width: "121px", height: "2px" },
+        },
+        slideDownBorder: {
+          "0%": { borderBottomWidth: "0", borderLeftWidth: "0" },
+          "100%": {
+            borderBottomWidth: "9px",
+            borderLeftWidth: "9px",
+          },
+        },
+
         borderTopTwoAnim: {
           "0%": { width: "0px", height: "2px" },
           "100%": { width: "160px", height: "2px" },
@@ -58,6 +82,39 @@ module.exports = {
             borderBottomWidth: "9px",
             borderLeftWidth: "9px",
           },
+        },
+
+        fullWidthAnim: {
+          "0%": { width: "0px", height: "2px" },
+          "100%": { width: "95%", height: "2px" },
+        },
+        eightWidthAnim: {
+          "0%": { width: "0px", height: "2px" },
+          "100%": { width: "80%", height: "2px" },
+        },
+        ninetyWidthAnim: {
+          "0%": { width: "0px", height: "2px" },
+          "100%": { width: "90%", height: "2px" },
+        },
+        sixtyWidthAnim: {
+          "0%": { width: "0px", height: "2px" },
+          "100%": { width: "60%", height: "2px" },
+        },
+        boxSlideFull: {
+          "0%": { right: "550px" },
+          "100%": { right: "45px" },
+        },
+        boxSlideEighty: {
+          "0%": { right: "550px" },
+          "100%": { right: "125px" },
+        },
+        boxSlideNinety: {
+          "0%": { right: "550px" },
+          "100%": { right: "70px" },
+        },
+        boxSlideSixty: {
+          "0%": { right: "550px" },
+          "100%": { right: "230px" },
         },
         borderTopRight: {
           "0%": { width: "0%", height: "0" },
@@ -88,7 +145,7 @@ module.exports = {
         boxSlideEighty: "boxSlideEighty 1s linear forwards",
         boxSlideNinety: "boxSlideNinety 1s linear forwards",
         boxSlideSixty: "boxSlideSixty 1s linear forwards",
-        bounceSlow: "bounce 3s linear infinite",
+        bounceSlow: "bounce 5s linear infinite",
       },
     },
   },

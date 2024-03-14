@@ -15,31 +15,6 @@ const AboutMe = (props: AboutMeProps) => {
     backgroundPosition: "center",
   };
 
-  const topTransition = {
-    width: props.isHiThereAnimInView ? "120px" : "0px",
-    transition: "all 400ms ease-in",
-  };
-
-  const rightTransition = {
-    height: props.isHiThereAnimInView ? "62px" : "0px",
-    transition: `all 400ms ease-in ${props.isHiThereAnimInView && "400ms"}`,
-  };
-
-  const leftTransition = {
-    height: props.isHiThereAnimInView ? "62px" : "0px",
-    transition: "all 400ms ease-in",
-  };
-  const bottomTransition = {
-    width: props.isHiThereAnimInView ? "120px" : "0px",
-    transition: `all 400ms ease-in ${props.isHiThereAnimInView && "400ms"}`,
-  };
-
-  const slideDownBorder = {
-    borderBottomWidth: props.isHiThereAnimInView ? "9px" : "0px",
-    borderLeftWidth: props.isHiThereAnimInView ? "9px" : "0px",
-    transition: `all 400ms ease-in ${props.isHiThereAnimInView && "400ms"}`,
-  };
-
   return (
     <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] mx-auto flex flex-col justify-center items-center">
       <div className="flex justify-center mb-8">
@@ -51,20 +26,24 @@ const AboutMe = (props: AboutMeProps) => {
         <div className="w-[38%] h-[90%]" style={backgroundStyle}></div>
         <div className="w-3/6 flex flex-col justify-center px-8 relative">
           <div
-            style={topTransition}
-            className="h-[2px] absolute bg-white lg:top-[70px]"
+            className={`${
+              props.isHiThereAnimInView ? "w-[120px]" : "w-[0px]"
+            } h-[2px] absolute bg-white lg:top-[70px] transition-all linear duration-500`}
           ></div>
           <div
-            style={rightTransition}
-            className={`absolute bg-white left-[150px] lg:top-[70px] md:top-[68px] w-[2px] sm:top-[44px]`}
+            className={`${
+              props.isHiThereAnimInView ? "h-[55px] delay-500" : "h-[0px]"
+            } absolute bg-white left-[150px] lg:top-[70px] md:top-[68px] w-[2px] sm:top-[44px] transition-all linear duration-500`}
           ></div>
           <div
-            style={leftTransition}
-            className="absolute lg:top-[71px] w-[2px] md:top-[68px] bg-white sm:left-[30px] sm:top-[44px]"
+            className={`${
+              props.isHiThereAnimInView ? "h-[57px]" : "h-[0px]"
+            } absolute lg:top-[70px] w-[2px] md:top-[68px] bg-white sm:left-[30px] sm:top-[44px] transition-all linear duration-500`}
           ></div>
           <div
-            style={bottomTransition}
-            className={`absolute bg-white lg:top-[130px] h-[2px]`}
+            className={`${
+              props.isHiThereAnimInView ? "w-[120px] delay-500" : "w-[0px]"
+            } absolute bg-white lg:top-[125px] h-[2px] transition-all linear duration-500 `}
           ></div>
           <h4
             ref={props.hiThereAnimRef}
@@ -73,8 +52,11 @@ const AboutMe = (props: AboutMeProps) => {
             Hi there
           </h4>
           <div
-            style={slideDownBorder}
-            className="absolute lg:top-[133px] left-[50px] md:top-[127px] sm:top-[103px] w-0 h-0 border-solid border-white border-l-transparent transform rotate-180"
+            className={`${
+              props.isHiThereAnimInView
+                ? "border-b-[9px] border-l-[9px] transition-all linear duration-500 delay-500"
+                : "border-b-[0px] border-l-[0px] transition-all linear duration-500"
+            } absolute lg:top-[127px] left-[50px] md:top-[127px] sm:top-[103px] w-0 h-0 border-solid border-white border-l-transparent transform rotate-180`}
           ></div>
           <p
             ref={props.aboutMeNavBreakRef}
