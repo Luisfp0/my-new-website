@@ -96,7 +96,7 @@ function App() {
   }, [contactNavBreakRef]);
 
   return (
-    <>
+    <div className="bg-custom-gray">
       <section
         ref={homeSectionRef}
         className="h-screen flex flex-col bg-custom-gray"
@@ -145,7 +145,9 @@ function App() {
       </section>
       <section
         ref={contactSectionRef}
-        className={"bg-custom-gray flex pt-[130px] pb-[130px]"}
+        className={
+          "bg-custom-gray flex lg:pt-[130px] lg:pb-[130px] md:pt-[110px] md:pb-[130px] sm:pt-[110px] sm:pb-[130px]"
+        }
       >
         <Contact
           contactAnimRef={contactAnimRef}
@@ -153,7 +155,7 @@ function App() {
           contactNavBreakRef={contactNavBreakRef}
         />
       </section>
-    </>
+    </div>
   );
 }
 
