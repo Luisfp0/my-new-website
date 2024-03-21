@@ -123,13 +123,14 @@ function App() {
         }
       >
         <AboutMe
+          contactSectionRef={contactSectionRef}
           hiThereAnimRef={hiThereAnimRef}
           isHiThereAnimInView={isHiThereAnimInView}
           aboutMeNavBreakRef={aboutMeNavBreakRef}
         />
       </section>
       <section className={"flex py-[130px] bg-custom-gray "}>
-        <HireMe />
+        <HireMe contactSectionRef={contactSectionRef} />
       </section>
       <section
         ref={mySkillsSectionRef}
@@ -141,6 +142,7 @@ function App() {
           skillsAnimRef={skillsAnimRef}
           isSkillsAnimInView={isSkillsAnimInView}
           mySkillsNavBreakRef={mySkillsNavBreakRef}
+          contactSectionRef={contactSectionRef}
         />
       </section>
       <section

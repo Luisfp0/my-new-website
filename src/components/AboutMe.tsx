@@ -1,13 +1,30 @@
 import { FaArrowDown, FaDownload } from "react-icons/fa";
 import example from "../assets/img/examplePerfilImage.jpg";
+import curriculum from "../assets/Curriculum-Luís-Fernando.pdf";
 
 interface AboutMeProps {
   aboutMeNavBreakRef: React.RefObject<HTMLDivElement>;
   hiThereAnimRef: React.RefObject<HTMLDivElement>;
   isHiThereAnimInView: boolean;
+  contactSectionRef: React.RefObject<HTMLDivElement>;
 }
 
 const AboutMe = (props: AboutMeProps) => {
+  const handleScrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  function handleDownload() {
+    const fileUrl = curriculum;
+    const fileName = "Curriculum-Luís-Fernando.pdf";
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = fileName;
+    link.click();
+  }
+
   return (
     <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] mx-auto flex flex-col justify-center items-center">
       <div className="flex justify-center mb-8">
@@ -84,19 +101,48 @@ const AboutMe = (props: AboutMeProps) => {
               <dd className="mb-[15px] sm:text-[14.4px]">Luisfp0</dd>
             </div>
           </dl>
-          <hr className="mt-[16px] mb-[48px]"></hr>
+          <hr className="mt-[16px] mb-[48px] opacity-[0.3]"></hr>
           <div className="flex gap-5 text-white text-[14px]">
-            <a className="flex items-center justify-center h-[45px] w-[220px] bg-custom-orange">
-              <span className="sm:text-[12.6px]">CONTACT ME</span>
-              <FaArrowDown
-                color="white"
-                className="h-3 w-3 transform -rotate-90 ml-[10px]"
-              />
-            </a>
-            <a className="flex items-center justify-center h-[45px] w-[220px] bg-transparent border-2 py-[12px] px-[20px] box-border">
-              <FaDownload color="white" className="h-4 w-4 mr-[10px]" />
-              <span className="sm:text-[12.6px] w-[92px]">DOWNLOAD CV</span>
-            </a>
+            <div
+              className="relative overflow-hidden group"
+              onClick={() => handleScrollToSection(props.contactSectionRef)}
+            >
+              <a className="absolute right-[221px] cursor-pointer flex items-center justify-center h-[45px] w-[220px] bg-[#d44229] group-hover:translate-x-[221px] transition-all duration-300">
+                <span className="sm:text-[12.6px] lg:sm:text-[13.3px]">
+                  CONTACT ME
+                </span>
+                <FaArrowDown
+                  color="white"
+                  className="h-3 w-3 transform -rotate-90 ml-[10px]"
+                />
+              </a>
+              <a className="cursor-pointer flex items-center justify-center h-[45px] w-[220px] bg-[#f26c4f] group-hover:translate-x-[221px] transition-all duration-300">
+                <span className="sm:text-[12.6px] lg:sm:text-[13.3px]">
+                  CONTACT ME
+                </span>
+                <FaArrowDown
+                  color="white"
+                  className="h-3 w-3 transform -rotate-90 ml-[10px]"
+                />
+              </a>
+            </div>
+            <div
+              className="relative overflow-hidden group "
+              onClick={handleDownload}
+            >
+              <a className="absolute right-[221px] cursor-pointer flex items-center justify-center h-[45px] w-[220px] bg-[white] group-hover:translate-x-[221px] transition-all duration-300">
+                <span className="sm:text-[12.6px] lg:sm:text-[13.3px] w-[97px] text-black">
+                  DOWNLOAD CV
+                </span>
+                <FaDownload color="black" className="h-4 w-4 ml-[10px]" />
+              </a>
+              <a className="cursor-pointer flex items-center justify-center h-[45px] w-[220px] border-[1px] bg-none group-hover:translate-x-[221px] transition-all duration-300">
+                <span className="sm:text-[12.6px] w-[97px] lg:sm:text-[13.3px]">
+                  DOWNLOAD CV
+                </span>
+                <FaDownload color="white" className="h-3 w-3 ml-[10px]" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
