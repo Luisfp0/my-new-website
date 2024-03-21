@@ -200,7 +200,7 @@ const Contact = (props: ContactProps) => {
                 <input
                   {...(register("name"), { required: true })}
                   placeholder="Name"
-                  className="py-[9px] px-[12px] border-none bg-[#FFFFFF1A]"
+                  className="py-[9px] px-[12px]  bg-[#FFFFFF1A] hover:bg-[#FFFFFF33] duration-300"
                 />
               </div>
               <div className="flex flex-col px-[15px] w-[50%]">
@@ -208,7 +208,7 @@ const Contact = (props: ContactProps) => {
                 <input
                   {...(register("email"), { required: true })}
                   placeholder="Email"
-                  className="py-[9px] px-[12px] border-none bg-[#FFFFFF1A]"
+                  className="py-[9px] px-[12px] border-none bg-[#FFFFFF1A] hover:bg-[#FFFFFF33] duration-300"
                 />
               </div>
             </div>
@@ -217,7 +217,7 @@ const Contact = (props: ContactProps) => {
               <input
                 {...register("subject", { required: true })}
                 placeholder="Subject"
-                className="py-[9px] px-[12px] border-none bg-[#FFFFFF1A]"
+                className="py-[9px] px-[12px] border-none bg-[#FFFFFF1A] hover:bg-[#FFFFFF33] duration-300"
               />
             </div>
             <div className="flex flex-col px-[15px] w-[100%]">
@@ -225,7 +225,7 @@ const Contact = (props: ContactProps) => {
               <textarea
                 {...(register("message"), { required: true })}
                 placeholder="Message"
-                className="py-[9px] px-[12px] border-none bg-[#FFFFFF1A] h-[150px]"
+                className="py-[9px] px-[12px] border-none bg-[#FFFFFF1A] hover:bg-[#FFFFFF33] h-[150px] duration-300"
               />
             </div>
             <div className="mt-[30px] px-[15px] flex justify-end">

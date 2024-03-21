@@ -104,11 +104,11 @@ const AboutMe = (props: AboutMeProps) => {
           <hr className="mt-[16px] mb-[48px] opacity-[0.3]"></hr>
           <div className="flex gap-5 text-white text-[14px]">
             <div
-              className="relative overflow-hidden group"
+              className="relative overflow-hidden group flex"
               onClick={() => handleScrollToSection(props.contactSectionRef)}
             >
-              <a className="absolute right-[221px] cursor-pointer flex items-center justify-center h-[45px] w-[220px] bg-[#d44229] group-hover:translate-x-[221px] transition-all duration-300">
-                <span className="sm:text-[12.6px] lg:sm:text-[13.3px]">
+              <a className="absolute lg:right-[221px] md:right-[220px] cursor-pointer flex items-center justify-center h-[45px] w-[220px] bg-[#d44229] lg:group-hover:translate-x-[221px] md:group-hover:translate-x-[235px] transition-all duration-300">
+                <span className="sm:text-[12.6px] md:sm:text-[12.6px] lg:sm:text-[13.3px]">
                   CONTACT ME
                 </span>
                 <FaArrowDown
@@ -116,8 +116,8 @@ const AboutMe = (props: AboutMeProps) => {
                   className="h-3 w-3 transform -rotate-90 ml-[10px]"
                 />
               </a>
-              <a className="cursor-pointer flex items-center justify-center h-[45px] w-[220px] bg-[#f26c4f] group-hover:translate-x-[221px] transition-all duration-300">
-                <span className="sm:text-[12.6px] lg:sm:text-[13.3px]">
+              <a className="cursor-pointer flex items-center justify-center h-[45px] w-[220px] bg-[#f26c4f] lg:group-hover:translate-x-[221px] md:group-hover:translate-x-[235px] transition-all duration-300">
+                <span className="sm:text-[12.6px] md:sm:text-[12.6px] lg:sm:text-[13.3px]">
                   CONTACT ME
                 </span>
                 <FaArrowDown
@@ -127,16 +127,16 @@ const AboutMe = (props: AboutMeProps) => {
               </a>
             </div>
             <div
-              className="relative overflow-hidden group "
+              className="relative group overflow-hidden flex"
               onClick={handleDownload}
             >
-              <a className="absolute right-[221px] cursor-pointer flex items-center justify-center h-[45px] w-[220px] bg-[white] group-hover:translate-x-[221px] transition-all duration-300">
+              <a className="absolute lg:right-[221px] md:right-[220px] cursor-pointer flex items-center justify-center h-[45px] w-[220px] bg-[white] lg:group-hover:translate-x-[221px] md:group-hover:translate-x-[235px] transition-all duration-300">
                 <span className="sm:text-[12.6px] lg:sm:text-[13.3px] w-[97px] text-black">
                   DOWNLOAD CV
                 </span>
                 <FaDownload color="black" className="h-4 w-4 ml-[10px]" />
               </a>
-              <a className="cursor-pointer flex items-center justify-center h-[45px] w-[220px] border-[1px] bg-none group-hover:translate-x-[221px] transition-all duration-300">
+              <a className="cursor-pointer flex items-center justify-center h-[45px] w-[220px] border-[1px] bg-none lg:group-hover:translate-x-[221px] md:group-hover:translate-x-[235px] transition-all duration-300">
                 <span className="sm:text-[12.6px] w-[97px] lg:sm:text-[13.3px]">
                   DOWNLOAD CV
                 </span>
