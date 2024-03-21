@@ -22,7 +22,10 @@ function Header(props: HeaderProps) {
       className={`z-50 bg-white flex items-center justify-center w-full fixed`}
     >
       <div className=" container flex items-center justify-between bg-blue w-full lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px]">
-        <a className="absolute mt-10">
+        <a
+          className="absolute mt-10 cursor-pointer"
+          onClick={() => handleScrollToSection(props.homeSectionRef)}
+        >
           <img src={logo} alt="Logo" />
         </a>
         <div className="items-center justify-end flex-grow h-full w-full text-right flex">

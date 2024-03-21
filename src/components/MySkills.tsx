@@ -40,7 +40,7 @@ const MySkills = (props: MySkillsProps) => {
           </p>
           <a
             onClick={() => handleScrollToSection(props.contactSectionRef)}
-            className="cursor-pointer text-[14px] py-[12px] px-[20px] border-[2px] mb-[48px] sm:text-[12.6px] hover:bg-white hover:text-custom-gray"
+            className="cursor-pointer text-[14px] py-[12px] px-[20px] border-[2px] mb-[48px] sm:text-[12.6px] hover:bg-white hover:text-custom-gray duration-300"
           >
             CONTACT ME
           </a>
