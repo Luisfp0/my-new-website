@@ -1,6 +1,5 @@
-import "react-tabs/style/react-tabs.css";
 import PricingCards from "./PricingCards";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Payment = () => {
   const [activeTab, setActiveTab] = useState("monthly");
@@ -51,14 +50,18 @@ const Payment = () => {
       text: "Integrates natural elements, greenery, and natural light to enhance connectivity to the natural environment.",
     },
   ];
+  useEffect(() => {
+    console.log(activeTab);
+  }, [activeTab]);
+
   return (
     <div className="flex items-center justify-center h-screen w-screen bg-transparent">
       <div className="flex flex-col justify-start items-center w-[85vw] h-[85vh] bg-[#111] p-[21px] overflow-y-auto scrollbar-style scrollbar-thumb-style">
         <ul className="flex mb-[50px] bg-[#FFFFFF1A] border-[#FFFFFF2A] border-[1px] rounded-md p-[2px] text-white relative">
           <div
-            className={`bg-[#F44425] py-[20px] px-[62px] absolute rounded-md transition-all duration-300 linear ${
-              activeTab === "yearly" && "translate-x-[124px] px-[54px]"
-            }`}
+            className={`bg-[#F44425] w-[122px] h-[40px] absolute rounded-md transition-all duration-300 linear
+            ${activeTab === "yearly" && "translate-x-[124px] w-[109px]"}
+            `}
           ></div>
           <li
             onClick={() => setActiveTab("monthly")}
