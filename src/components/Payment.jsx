@@ -59,8 +59,12 @@ const Payment = () => {
       <div className="flex flex-col justify-start items-center w-[85vw] h-[85vh] bg-[#111] p-[21px] overflow-y-auto scrollbar-style scrollbar-thumb-style">
         <ul className="flex mb-[50px] bg-[#FFFFFF1A] border-[#FFFFFF2A] border-[1px] rounded-md p-[2px] text-white relative">
           <div
-            className={`bg-[#F44425] w-[122px] h-[40px] absolute rounded-md transition-all duration-300 linear
-            ${activeTab === "yearly" && "translate-x-[124px] w-[109px]"}
+            className={`bg-[#F44425] h-[40px] absolute rounded-md transition-all duration-300 linear
+            ${
+              activeTab === "yearly"
+                ? "translate-x-[124px] w-[109px]"
+                : "w-[122px]"
+            }
             `}
           ></div>
           <li
