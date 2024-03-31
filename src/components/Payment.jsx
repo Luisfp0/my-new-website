@@ -57,7 +57,7 @@ const Payment = () => {
         <ul className="flex mb-[50px] bg-[#FFFFFF1A] border-[#FFFFFF2A] border-[1px] rounded-md p-[2px] text-white relative">
           <div
             className={`bg-[#F44425] py-[20px] px-[62px] absolute rounded-md transition-all duration-300 linear ${
-              activeTab === "yearly" && "translate-x-[124px] px-[55px]"
+              activeTab === "yearly" && "translate-x-[124px] px-[54px]"
             }`}
           ></div>
           <li
