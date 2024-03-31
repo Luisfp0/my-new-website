@@ -126,8 +126,18 @@ module.exports = {
           "50%": { width: "100%", height: "0" },
           "100%": { width: "100%", height: "100%" },
         },
+        fadeInMonth: {
+          "0%": { opacity: 0, transform: "translateY(30px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+        fadeInYearly: {
+          "0%": { opacity: 0, transform: "translateY(30px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
       },
       animation: {
+        fadeInMonth: "fadeInMonth 0.5s linear",
+        fadeInYearly: "fadeInYearly 0.5s linear",
         borderLeftAnim: "borderLeftAnim 0.5s linear forwards",
         borderTopAnim: "borderTopAnim 0.5s linear forwards",
         borderRightAnim: "borderRightAnim 0.5s linear forwards 0.49s",

@@ -6,6 +6,7 @@ import HireMe from "./components/HireMe";
 import MySkills from "./components/MySkills";
 import Contact from "./components/Contact";
 import { inView } from "framer-motion";
+import Payment from "./components/Payment";
 
 function App() {
   const [isAboutMeInView, setIsAboutMeInView] = useState(false);
@@ -101,7 +102,8 @@ function App() {
         ref={homeSectionRef}
         className="h-screen flex flex-col bg-custom-gray"
       >
-        <Header
+        <Payment />
+        {/* <Header
           isAboutMeInView={isAboutMeInView}
           isHomeInView={isHomeInView}
           isMySkillsInView={isMySkillsInView}
@@ -155,7 +157,7 @@ function App() {
           contactAnimRef={contactAnimRef}
           isContactsAnimInView={isContactsAnimInView}
           contactNavBreakRef={contactNavBreakRef}
-        />
+        /> */}
       </section>
     </div>
   );
