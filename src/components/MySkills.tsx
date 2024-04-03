@@ -55,7 +55,7 @@ const MySkills = (props: MySkillsProps) => {
               className={`${
                 props.isSkillsAnimInView
                   ? "right-[50px]"
-                  : "lg:right-[445px] md:right-[350px] sm:right-[230px]"
+                  : "lg:right-[445px] md:right-[350px] sm:right-[230px] right-[200px]"
               } absolute transition-all ease-in duration-1000`}
             >
               <figure className="absolute bottom-[10px] text-[12px] px-[6px] py-[2px] border-[2px] inline-block">
@@ -67,7 +67,7 @@ const MySkills = (props: MySkillsProps) => {
               className={`${
                 props.isSkillsAnimInView
                   ? "w-[95%]"
-                  : "lg:w-[15%] md:w-[25%] sm:w-[30%]"
+                  : "lg:w-[15%] md:w-[25%] sm:w-[30%] w-[20%]"
               } h-[2px] bg-custom-orange transition-all ease-in duration-1000`}
             ></div>
           </div>
@@ -76,8 +76,8 @@ const MySkills = (props: MySkillsProps) => {
             <div
               className={`${
                 props.isSkillsAnimInView
-                  ? "lg:right-[130px] md:right-[110px] sm:right-[85px] xsm:right-[120px] right-[100px]"
-                  : "lg:right-[445px] md:right-[350px] sm:right-[230px]"
+                  ? "lg:right-[130px] md:right-[110px] sm:right-[85px] xsm:right-[120px] right-[80px]"
+                  : "lg:right-[445px] md:right-[350px] sm:right-[230px] right-[200px]"
               } absolute transition-all ease-in duration-1000`}
             >
               <figure className="absolute bottom-[10px] text-[12px] px-[6px] py-[2px] border-[2px] inline-block">
@@ -89,7 +89,7 @@ const MySkills = (props: MySkillsProps) => {
               className={`${
                 props.isSkillsAnimInView
                   ? "w-[80%]"
-                  : "lg:w-[15%] md:w-[25%] sm:w-[30%]"
+                  : "lg:w-[15%] md:w-[25%] sm:w-[30%] w-[20%]"
               } h-[2px] bg-custom-orange transition-all ease-in duration-1000`}
             ></div>
           </div>
@@ -98,8 +98,8 @@ const MySkills = (props: MySkillsProps) => {
             <div
               className={`${
                 props.isSkillsAnimInView
-                  ? "lg:right-[85px] md:right-[70px] sm:right-[50px] xsm:right-[70px] right-[60px]"
-                  : "lg:right-[445px] md:right-[350px] sm:right-[230px]"
+                  ? "lg:right-[85px] md:right-[70px] sm:right-[50px] xsm:right-[70px] right-[50px]"
+                  : "lg:right-[445px] md:right-[350px] sm:right-[230px] right-[200px]"
               } absolute transition-all ease-in duration-1000`}
             >
               <figure className="absolute bottom-[10px] text-[12px] px-[6px] py-[2px] border-[2px] inline-block">
@@ -111,7 +111,7 @@ const MySkills = (props: MySkillsProps) => {
               className={`${
                 props.isSkillsAnimInView
                   ? "w-[90%]"
-                  : "lg:w-[15%] md:w-[25%] sm:w-[30%]"
+                  : "lg:w-[15%] md:w-[25%] sm:w-[30%] w-[20%]"
               } h-[2px] bg-custom-orange transition-all ease-in duration-1000`}
             ></div>
           </div>
@@ -120,8 +120,8 @@ const MySkills = (props: MySkillsProps) => {
             <div
               className={`${
                 props.isSkillsAnimInView
-                  ? "lg:right-[235px] md:right-[195px] sm:right-[145px] xsm:right-[215px] right-[160px]"
-                  : "lg:right-[445px] md:right-[350px] sm:right-[230px]"
+                  ? "lg:right-[235px] md:right-[195px] sm:right-[145px] xsm:right-[215px] right-[140px]"
+                  : "lg:right-[445px] md:right-[350px] sm:right-[230px] right-[200px]"
               } absolute transition-all ease-in duration-1000`}
             >
               <figure className="absolute bottom-[10px] text-[12px] px-[6px] py-[2px] border-[2px] inline-block">
@@ -133,7 +133,7 @@ const MySkills = (props: MySkillsProps) => {
               className={`${
                 props.isSkillsAnimInView
                   ? "w-[60%]"
-                  : "lg:w-[15%] md:w-[25%] sm:w-[30%]"
+                  : "lg:w-[15%] md:w-[25%] sm:w-[30%] w-[20%]"
               } h-[2px] bg-custom-orange transition-all ease-in duration-1000`}
             ></div>
           </div>
