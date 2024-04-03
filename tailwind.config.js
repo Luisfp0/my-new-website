@@ -31,6 +31,7 @@ module.exports = {
         "custom-orange": "#d44729",
       },
       screens: {
+        xsm: "576px",
         sm: "768px",
         md: "992px",
         lg: "1200px",

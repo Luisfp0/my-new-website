@@ -20,7 +20,7 @@ const Hero = (props: HeroProps) => {
   };
 
   return (
-    <div className="container flex justify-center items-center w-full lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] h-screen mx-auto">
+    <div className="container flex justify-center items-center w-full lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] h-screen mx-auto">
       <div className="w-full">
         <figure
           className="flex mb-6 md:mb-5 sm:mb-[21.6px]"
@@ -82,7 +82,7 @@ const Hero = (props: HeroProps) => {
             />
           </a>
         </figure>
-        <h1 className="font-normal lg:text-6xl md:text-5xl sm:text-[43.2px] text-white mb-11 md:mb-9 sm:mb-[27px]">
+        <h1 className="font-normal lg:text-6xl md:text-5xl sm:text-[43.2px] xsm:text-[34px] text-white mb-11 md:mb-9 sm:mb-[27px]">
           I am Luís Fernando
         </h1>
         <Presentation />

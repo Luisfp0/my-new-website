@@ -12,10 +12,10 @@ const MySkills = (props: MySkillsProps) => {
     }
   };
   return (
-    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
-      <div className="w-full mb-[80px] sm:mb-[45px] text-center">
+    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
+      <div className="w-full lg:mb-[80px] md:mb-[60] sm:mb-[45px] xsm:mb-[40px] text-center">
         <h2
-          className="lg:text-[36px] md:text-[30.4px] mb-[8px] text-white sm:text-[27px]"
+          className="lg:text-[36px] md:text-[30.4px] mb-[8px] text-white sm:text-[27px] xsm:text-[25px]"
           ref={props.mySkillsNavBreakRef}
         >
           My Skills
@@ -24,8 +24,11 @@ const MySkills = (props: MySkillsProps) => {
       <h4 className="text-white w-full text-[24px] mb-[30px] px-[15px] sm:text-[21.6px]">
         Every Day is a New Challenge
       </h4>
-      <div ref={props.skillsAnimRef} className="flex flex-row text-white">
-        <div className="w-3/6 text-[16px] px-[15px]">
+      <div
+        ref={props.skillsAnimRef}
+        className="flex lg:flex-row md:flex-row sm:flex-row xsm:flex-col text-white"
+      >
+        <div className="lg:w-3/6 md:w-3/6 sm:w-3/6 xsm:w-full text-[16px] px-[15px] lg:mb-0 md:mb-0 sm:mb-[35px] xsm:mb-[50px]">
           <p className="mb-[30px] opacity-[0.5] md:text-[15.2px] sm:text-[14.4px]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima
             assumenda ut temporibus dolorem expedita numquam minus quam
@@ -45,7 +48,7 @@ const MySkills = (props: MySkillsProps) => {
             CONTACT ME
           </a>
         </div>
-        <div className="w-3/6 px-[15px] text-[18px] sm:text-[16.2px]">
+        <div className="lg:w-3/6 md:w-3/6 sm:w-3/6 xsm:w-full px-[15px] text-[18px] sm:text-[16.2px]">
           <div className="mb-[32px] relative">
             <h5 className="mb-[8px]">Webdesign</h5>
             <div
@@ -73,9 +76,9 @@ const MySkills = (props: MySkillsProps) => {
             <div
               className={`${
                 props.isSkillsAnimInView
-                  ? "lg:right-[125px] md:right-[110px] sm:right-[90px]"
+                  ? "lg:right-[130px] md:right-[110px] sm:right-[85px] xsm:right-[120px]"
                   : "lg:right-[445px] md:right-[350px] sm:right-[230px]"
-              } h-[2px] absolute transition-all ease-in duration-1000`}
+              } absolute transition-all ease-in duration-1000`}
             >
               <figure className="absolute bottom-[10px] text-[12px] px-[6px] py-[2px] border-[2px] inline-block">
                 80%
@@ -95,9 +98,9 @@ const MySkills = (props: MySkillsProps) => {
             <div
               className={`${
                 props.isSkillsAnimInView
-                  ? "lg:right-[70px] md:right-[70px] sm:right-[55px]"
+                  ? "lg:right-[85px] md:right-[70px] sm:right-[50px] xsm:right-[70px]"
                   : "lg:right-[445px] md:right-[350px] sm:right-[230px]"
-              } h-[2px] absolute transition-all ease-in duration-1000`}
+              } absolute transition-all ease-in duration-1000`}
             >
               <figure className="absolute bottom-[10px] text-[12px] px-[6px] py-[2px] border-[2px] inline-block">
                 90%
@@ -117,7 +120,7 @@ const MySkills = (props: MySkillsProps) => {
             <div
               className={`${
                 props.isSkillsAnimInView
-                  ? "lg:right-[230px] md:right-[200px] sm:right-[150px]"
+                  ? "lg:right-[235px] md:right-[195px] sm:right-[145px] xsm:right-[215px]"
                   : "lg:right-[445px] md:right-[350px] sm:right-[230px]"
               } absolute transition-all ease-in duration-1000`}
             >

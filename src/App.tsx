@@ -102,8 +102,8 @@ function App() {
         ref={homeSectionRef}
         className="h-screen flex flex-col bg-custom-gray"
       >
-        <Payment />
-        {/* <Header
+        {/* <Payment /> */}
+        <Header
           isAboutMeInView={isAboutMeInView}
           isHomeInView={isHomeInView}
           isMySkillsInView={isMySkillsInView}
@@ -137,7 +137,7 @@ function App() {
       <section
         ref={mySkillsSectionRef}
         className={
-          "flex bg-custom-gray lg:pt-[130px] lg:pb-[48px] md:pt-[130px] md:pb-[48px] sm:pb-[43px]"
+          "flex bg-custom-gray lg:pt-[130px] lg:pb-[48px] md:pt-[130px] md:pb-[48px] sm:pb-[43px] xsm:pt-[50px] xsm:pb-[88px]"
         }
       >
         <MySkills
@@ -150,14 +150,14 @@ function App() {
       <section
         ref={contactSectionRef}
         className={
-          "bg-custom-gray flex lg:pt-[130px] lg:pb-[130px] md:pt-[110px] md:pb-[130px] sm:pt-[110px] sm:pb-[130px]"
+          "bg-custom-gray flex lg:pt-[130px] lg:pb-[130px] md:pt-[110px] md:pb-[130px] sm:pt-[110px] sm:pb-[130px] xsm:pt-[90px] xsm:pb-[130px]"
         }
       >
         <Contact
           contactAnimRef={contactAnimRef}
           isContactsAnimInView={isContactsAnimInView}
           contactNavBreakRef={contactNavBreakRef}
-        /> */}
+        />
       </section>
     </div>
   );

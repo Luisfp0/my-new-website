@@ -50,16 +50,13 @@ const Payment = () => {
       text: "Integrates natural elements, greenery, and natural light to enhance connectivity to the natural environment.",
     },
   ];
-  useEffect(() => {
-    console.log(activeTab);
-  }, [activeTab]);
 
   return (
     <div className="flex items-center justify-center h-screen w-screen bg-transparent">
-      <div className="flex flex-col justify-start items-center w-[85vw] h-[85vh] bg-[#111] p-[21px] overflow-y-auto scrollbar-style scrollbar-thumb-style">
-        <ul className="flex mb-[50px] bg-[#FFFFFF1A] border-[#FFFFFF2A] border-[1px] rounded-md p-[2px] text-white relative">
+      <div className="flex flex-col justify-start items-center w-[85vw] h-[85vh] bg-white p-[21px] overflow-y-auto scrollbar-style scrollbar-thumb-style">
+        <ul className="flex mb-[50px] bg-coolGray-50 border-blue-600 border-[1px] rounded-md p-[2px] text-black relative">
           <div
-            className={`bg-[#F44425] h-[40px] absolute rounded-md transition-all duration-300 linear
+            className={`bg-blue-600 h-[40px] absolute rounded-md transition-all duration-300 linear
             ${
               activeTab === "yearly"
                 ? "translate-x-[124px] w-[109px]"
@@ -81,11 +78,11 @@ const Payment = () => {
           </li>
         </ul>
         <PricingCards activeTab={activeTab}></PricingCards>
-        <div className="lg:max-w-[1200px] md:max-w-[960px] sm:max-w-[720px] flex flex-wrap justify-center mt-[100px] text-white text-[15px]">
+        <div className="lg:max-w-[1200px] md:max-w-[960px] sm:max-w-[720px] flex flex-wrap justify-center mt-[100px] text-black text-[15px]">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.author}
-              className={`flex flex-col lg:w-[309px] md:w-[309px] border-[1px] border-[#343434] bg-[#161616] rounded-lg p-[10px] m-[10px] ${
+              className={`flex flex-col lg:w-[309px] md:w-[309px] border-[1px] border-[#343434] bg-coolGray-50 rounded-lg p-[10px] m-[10px] ${
                 index === 0 ? "lg:ml-0" : ""
               } ${index === testimonials.length - 1 ? "lg:mr-0" : ""}`}
             >
@@ -132,9 +129,9 @@ const Payment = () => {
             </div>
           ))}
         </div>
-        <div className="w-full flex flex-wrap justify-center mt-[100px] gap-[20px] text-white text-[16px] mb-[28px]">
+        <div className="w-full flex flex-wrap justify-center mt-[100px] gap-[20px] text-black text-[16px] mb-[28px]">
           {packs.map((pack) => (
-            <a className="m-[5px] p-[21px] w-[300px] rounded-lg border-[1px] flex flex-col items-center justify-center border-[#343434] hover:border-[#F44425] bg-[#161616]">
+            <a className="m-[5px] p-[21px] w-[300px] rounded-lg border-[1px] flex flex-col items-center justify-center border-[#343434] hover:border-blue-600 bg-coolGray-50">
               <div>
                 <img src={pack.image} className="w-[100%] rounded-md"></img>
                 <p className="text-[21px] text-left font-bold mt-[14px]">
@@ -147,7 +144,7 @@ const Payment = () => {
             </a>
           ))}
         </div>
-        <p className="lg:text-[11px] md:text-[10px] sm:text-[8px] text-[8px] my-[14px] opacity-[0.5] text-white max-w-[900px] text-center">
+        <p className="lg:text-[11px] md:text-[10px] sm:text-[8px] text-[8px] my-[14px] opacity-[0.5] text-black max-w-[900px] text-center">
           By clicking the button above to proceed you agree with Interior AI's
           <a href="/#">TOS</a>. Interior AI provides you immediate access to
           digital content as soon as you complete your purchase, without waiting

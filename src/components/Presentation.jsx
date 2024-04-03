@@ -23,11 +23,11 @@ function Presentation() {
     <div className="relative">
       <div className="border-4 border-solid border-white inline-block relative">
         <span
-          className="lg:text-6xl md:text-5xl sm:text-[43.2px] text-white lg:py-8 lg:pl-8 lg:pr-2 md:py-6 md:pl-8 md:pr-2 sm:py-6 sm:pl-4"
+          className="lg:text-6xl md:text-5xl sm:text-[43.2px] xsm:text-[34px] text-white lg:py-8 lg:pl-8 lg:pr-2 md:py-6 md:pl-8 md:pr-2 sm:py-6 sm:pl-4 xsm:py-6 xsm:pl-4"
           ref={ref}
         />
       </div>
-      <div className="absolute w-0 h-0 border-solid border-white sm:border-b-[9px] sm:border-l-[9px] border-b-19 border-l-19 border-l-transparent left-10 -bottom-4 sm:-bottom-2 transform rotate-180"></div>
+      <div className="absolute w-0 h-0 border-solid border-white sm:border-b-[9px] sm:border-l-[9px] xsm:border-b-[9px] xsm:border-l-[9px] lg:border-b-19 lg:border-l-19 border-l-transparent left-10 -bottom-4 sm:-bottom-2 xsm:-bottom-[7px] lg:-bottom-4 transform rotate-180"></div>
     </div>
   );
 }
