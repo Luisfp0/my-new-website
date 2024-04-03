@@ -31,7 +31,7 @@ const Contact = (props: ContactProps) => {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
   return (
-    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[400px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
+    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
       <div className="relative mb-[120px]">
         <div
           className={`${

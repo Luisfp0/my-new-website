@@ -26,7 +26,7 @@ const AboutMe = (props: AboutMeProps) => {
   }
 
   return (
-    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[400px] mx-auto flex flex-col justify-center items-center">
+    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px] mx-auto flex flex-col justify-center items-center">
       <div className="flex justify-center mb-8">
         <h2 className="text-3xl text-white sm:text-[27px] lg:text-[36px] md:text-[30px]">
           About Me
@@ -36,7 +36,7 @@ const AboutMe = (props: AboutMeProps) => {
         <div className="h-full mb-[10px] lg:w-3/6 md:w-3/6 sm:w-3/6 xsm:w-4/6 lg:flex md:flex text-end">
           <img src={example}></img>
         </div>
-        <div className="lg:w-3/6 md:w-3/6 sm:w-3/6 w-[400px] xsm:w-full flex flex-col justify-center px-8 relative">
+        <div className="lg:w-3/6 md:w-3/6 sm:w-3/6 w-[350px] xsm:w-full flex flex-col justify-center px-8 relative">
           <div
             className={`${
               props.isHiThereAnimInView ? "w-[120px]" : "w-[0px]"
@@ -92,7 +92,7 @@ const AboutMe = (props: AboutMeProps) => {
               <dt className="text-[#f26c4f] text-[14px] sm:text-[14.4px] md:text-[14.4px] lg:text-[14.4px]">
                 Email:
               </dt>
-              <dd className="mb-[15px] text-[14px] sm:text-[14.4px] md:text-[14.4px] lg:text-[14.4px]">
+              <dd className="mb-[15px] text-[13px] sm:text-[14.4px] md:text-[14.4px] lg:text-[14.4px]">
                 luis.oliveirabr1@gmail.com
               </dd>
             </div>

@@ -19,7 +19,7 @@ const HireMe = (props: HireMeProps) => {
   return (
     <div
       style={backgroundStyle}
-      className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[400px] mx-auto justify-center items-center w-full lg:h-[163px] md:h-[163px] sm:h-[163px] xsm:h-[120px] h-[120px] relative"
+      className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px] mx-auto justify-center items-center w-full lg:h-[163px] md:h-[163px] sm:h-[163px] xsm:h-[120px] h-[120px] relative"
     >
       <div className="w-full h-full flex-col flex items-center justify-center bg-black bg-opacity-80 border-2 border-custom-gray relative">
         <h3 className="lg:text-[30px] md:text-[20.9px] md:my[15.2px] lg:my-[16px] text-white ">

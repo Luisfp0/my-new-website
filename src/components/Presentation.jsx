@@ -13,7 +13,7 @@ const options = {
   typeSpeed: 65,
   backSpeed: 30,
   loop: true,
-  cursorChar: `<span class="lg:text-[60px] md:text-[50px] sm:text-[43.2px] text-[34px]" style="color: ${COLOR}; sm:p padding-right: 32px">|</span>`,
+  cursorChar: `<span class="lg:text-[60px] md:text-[50px] sm:text-[43.2px] text-[30px]" style="color: ${COLOR}; sm:p padding-right: 32px">|</span>`,
 };
 
 function Presentation() {
@@ -23,7 +23,7 @@ function Presentation() {
     <div className="relative">
       <div className="border-4 border-solid border-white inline-block relative">
         <span
-          className="lg:text-6xl md:text-5xl sm:text-[43.2px] text-[34px] text-white lg:py-8 lg:pl-8 lg:pr-2 md:py-6 md:pl-8 md:pr-2 sm:py-6 sm:pl-4 py-6 pl-4"
+          className="lg:text-6xl md:text-5xl sm:text-[43.2px] text-[30px] text-white lg:py-8 lg:pl-8 lg:pr-2 md:py-6 md:pl-8 md:pr-2 sm:py-6 sm:pl-4 py-6 pl-4"
           ref={ref}
         />
       </div>

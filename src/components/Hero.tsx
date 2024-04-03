@@ -20,7 +20,7 @@ const Hero = (props: HeroProps) => {
   };
 
   return (
-    <div className="container flex justify-center items-center w-full lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[400px] h-screen mx-auto">
+    <div className="container flex justify-center items-center w-full lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px] h-screen mx-auto">
       <div className="w-full">
         <figure
           className="flex mb-6 md:mb-5 sm:mb-[21.6px]"

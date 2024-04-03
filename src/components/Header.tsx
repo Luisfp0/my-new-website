@@ -21,7 +21,7 @@ function Header(props: HeaderProps) {
     <header
       className={`z-50 bg-white flex items-center justify-center w-screen fixed`}
     >
-      <div className="flex items-center justify-between bg-blue w-full h-[55px] mx-auto lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[400px]">
+      <div className="flex items-center justify-between bg-blue w-full h-[55px] mx-auto lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px]">
         <a
           className="absolute mt-10 cursor-pointer"
           onClick={() => handleScrollToSection(props.homeSectionRef)}
