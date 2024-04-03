@@ -121,7 +121,7 @@ function App() {
       <section
         ref={aboutMeSectionRef}
         className={
-          "flex flex-col lg:pt-[130px] lg:pb-[24px] md:pb-[23px] md:pt-[95px] sm:pb-[22px] sm:pt-[72px] bg-custom-gray"
+          "lg:pt-[130px] lg:pb-[24px] md:pb-[23px] md:pt-[95px] sm:pb-[22px] sm:pt-[72px] pb-[22px] pt-[72px] bg-custom-gray"
         }
       >
         <AboutMe
@@ -150,7 +150,7 @@ function App() {
       <section
         ref={contactSectionRef}
         className={
-          "bg-custom-gray flex lg:pt-[130px] lg:pb-[130px] md:pt-[110px] md:pb-[130px] sm:pt-[110px] sm:pb-[130px] xsm:pt-[90px] xsm:pb-[130px]"
+          "bg-custom-gray flex lg:pt-[130px] lg:pb-[130px] md:pt-[110px] md:pb-[130px] sm:pt-[110px] sm:pb-[130px] pt-[90px] pb-[130px]"
         }
       >
         <Contact

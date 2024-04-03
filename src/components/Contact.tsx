@@ -31,7 +31,7 @@ const Contact = (props: ContactProps) => {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
   return (
-    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
+    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[400px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
       <div className="relative mb-[120px]">
         <div
           className={`${
@@ -41,7 +41,7 @@ const Contact = (props: ContactProps) => {
         <div
           className={`${
             props.isContactsAnimInView ? "h-[56px] delay-500" : "h-[0px]"
-          } w-[2px] absolute lg:left-[159px] md:left-[157px] sm:left-[158px] xsm:left-[158px] bg-white transition-all linear duration-500`}
+          } w-[2px] absolute lg:left-[159px] md:left-[157px] sm:left-[158px] left-[158px] bg-white transition-all linear duration-500`}
         ></div>
         <div
           className={`${
@@ -53,7 +53,7 @@ const Contact = (props: ContactProps) => {
             props.isContactsAnimInView ? "w-[160px] delay-500" : "w-[0px]"
           } transition-all linear duration-500  h-[2px] absolute bg-white top-[55px] `}
         ></div>
-        <h4 className="w-[160px] text-center sm:text-[21px] xsm:text-[21px] text-[24px] text-white border-solid border-white py-3 px-4 relative">
+        <h4 className="w-[160px] text-center text-[21px] text-white border-solid border-white py-3 px-4 relative">
           Get In Touch
         </h4>
         <div
@@ -65,11 +65,11 @@ const Contact = (props: ContactProps) => {
         ></div>
       </div>
       <div
-        className="flex w-full xsm:flex-wrap justify-center text-white"
+        className="flex w-full flex-wrap justify-center text-white"
         ref={props.contactAnimRef}
       >
         <div
-          className={`flex flex-col lg:items-start md:items-start sm:items-start xsm:items-center px-[15px] pb-[24px] lg:w-[25%] md:w-[25%] sm:w-[25%] xsm:w-[50%] transition linear duration-700 ${
+          className={`flex flex-col lg:items-start md:items-start sm:items-start items-center px-[15px] pb-[24px] lg:w-[25%] md:w-[25%] sm:w-[25%] w-[50%] transition linear duration-700 ${
             props.isContactsAnimInView
               ? "opacity-[1] scale-100 -translate-y-5"
               : "opacity-[0]"
@@ -81,13 +81,13 @@ const Contact = (props: ContactProps) => {
             className="w-[34px] h-[40px] mb-[24px]"
           />
           <h5 className="mb-[8px] text-[18px] sm:text-[16px]">Address</h5>
-          <div className="opacity-[0.5] text-[16px] xsm:w-full lg:w-auto md:w-auto sm:w-auto lg:text-start md:text-start sm:text-start xsm:text-center sm:text-[14.4px]">
+          <div className="opacity-[0.5] text-[16px] w-full lg:w-auto md:w-auto sm:w-auto lg:text-start md:text-start sm:text-start text-center sm:text-[14.4px]">
             <figure>Goiânia Goiás</figure>
             <figure className="mb-[16px]">Brazil</figure>
           </div>
         </div>
         <div
-          className={`flex flex-col lg:items-start md:items-start sm:items-start xsm:items-center px-[15px] pb-[24px] lg:w-[25%] md:w-[25%] sm:w-[25%] xsm:w-[50%] transition linear duration-700 delay-100 ${
+          className={`flex flex-col lg:items-start md:items-start sm:items-start items-center px-[15px] pb-[24px] lg:w-[25%] md:w-[25%] sm:w-[25%] xsm:w-[50%] transition linear duration-700 delay-100 ${
             props.isContactsAnimInView
               ? "opacity-[1] scale-100 -translate-y-5"
               : "opacity-[0]"
@@ -107,7 +107,7 @@ const Contact = (props: ContactProps) => {
           </div>
         </div>
         <div
-          className={`flex flex-col lg:items-start md:items-start sm:items-start xsm:items-center px-[15px] pb-[24px] lg:w-[25%] md:w-[25%] sm:w-[25%] xsm:w-[50%] transition linear duration-700 delay-150 ${
+          className={`flex flex-col lg:items-start md:items-start sm:items-start items-center px-[15px] pb-[24px] lg:w-[25%] md:w-[25%] sm:w-[25%] w-[50%] transition linear duration-700 delay-150 ${
             props.isContactsAnimInView
               ? "opacity-[1] scale-100 -translate-y-5"
               : "opacity-[0]"
@@ -120,13 +120,13 @@ const Contact = (props: ContactProps) => {
           />
           <h5 className="mb-[8px] text-[18px] sm:text-[16px]">Email</h5>
           <div className="opacity-[0.5] text-[16px]">
-            <figure className="mb-[16px] sm:text-[11.6px]">
+            <figure className="mb-[16px] lg:text-[11.6px] md:text-[11.6px] sm:text-[11.6px] text-[11.0px]">
               luis.oliveirabr1@gmail.com
             </figure>
           </div>
         </div>
         <div
-          className={`flex flex-col lg:items-start md:items-start sm:items-start xsm:items-center px-[15px] pb-[24px] lg:w-[25%] md:w-[25%] sm:w-[25%] xsm:w-[50%] transition linear duration-700 delay-200 ${
+          className={`flex flex-col lg:items-start md:items-start sm:items-start items-center px-[15px] pb-[24px] lg:w-[25%] md:w-[25%] sm:w-[25%] w-[50%] transition linear duration-700 delay-200 ${
             props.isContactsAnimInView
               ? "opacity-[1] scale-100 -translate-y-5"
               : "opacity-[0]"
@@ -145,8 +145,8 @@ const Contact = (props: ContactProps) => {
           </div>
         </div>
       </div>
-      <div className="flex lg:flex-row md:flex-row sm:flex-row xsm:flex-col w-full pt-[48px] text-white">
-        <div className="lg:w-[30%] md:w-[30%] sm:w-[30%] xsm:w-full">
+      <div className="flex lg:flex-row md:flex-row sm:flex-row flex-col w-full pt-[48px] text-white">
+        <div className="lg:w-[30%] md:w-[30%] sm:w-[30%] w-full">
           <h3 className="text-[30px] mb-[30px] sm:text-[19.8px]">
             Let`s Connect
           </h3>
@@ -155,7 +155,7 @@ const Contact = (props: ContactProps) => {
               href="https://github.com/Luisfp0"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-start mb-[16px] lg:w-auto md:w-auto sm:w-auto xsm:w-1/2"
+              className="flex items-center justify-start mb-[16px] lg:w-auto md:w-auto sm:w-auto w-1/2"
             >
               <FiGithub className="rounded-full border-[1px] border-opacity-[0.5] w-[40px] h-[40px] py-[5px] px-[5px] mr-[24px]" />
               <span className="text-[16px] sm:text-[14.4px]">Github</span>
@@ -164,7 +164,7 @@ const Contact = (props: ContactProps) => {
               href="https://www.linkedin.com/in/luis-fernando-de-paulo/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-start mb-[16px] lg:w-auto md:w-auto sm:w-auto xsm:w-1/2"
+              className="flex items-center justify-start mb-[16px] lg:w-auto md:w-auto sm:w-auto w-1/2"
             >
               <FaLinkedin className="rounded-full border-[1px] border-opacity-[0.5] w-[35px] h-[35px] py-[5px] px-[5px] mr-[24px]" />
               <span className="text-[16px] sm:text-[14.4px]">Linkedin</span>
@@ -173,7 +173,7 @@ const Contact = (props: ContactProps) => {
               href="https://www.instagram.com/louis_fnando/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-start mb-[16px] lg:w-auto md:w-auto sm:w-auto xsm:w-1/2"
+              className="flex items-center justify-start mb-[16px] lg:w-auto md:w-auto sm:w-auto w-1/2"
             >
               <CiInstagram className="rounded-full border-[1px] border-opacity-[0.5] w-[40px] h-[40px] py-[5px] px-[5px] mr-[24px]" />
               <span className="text-[16px] sm:text-[14.4px]">Instagram</span>
@@ -182,14 +182,14 @@ const Contact = (props: ContactProps) => {
               href="https://twitter.com/Louisfp0"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-start mb-[16px] lg:w-auto md:w-auto sm:w-auto xsm:w-1/2"
+              className="flex items-center justify-start mb-[16px] lg:w-auto md:w-auto sm:w-auto w-1/2"
             >
               <FaXTwitter className="rounded-full border-[1px] border-opacity-[0.5] w-[40px] h-[40px] py-[5px] px-[5px] mr-[24px]" />
               <span className="text-[16px] sm:text-[14.4px]">Twitter</span>
             </a>
           </div>
         </div>
-        <div className="lg:w-[70%] md:w-[70%] sm:w-[70%] xsm:w-full">
+        <div className="lg:w-[70%] md:w-[70%] sm:w-[70%] w-full">
           <h3 className="text-[30px] mb-[30px] sm:text-[19.8px]">
             Send Me a Message
           </h3>
@@ -234,9 +234,9 @@ const Contact = (props: ContactProps) => {
             <div className="mt-[30px] px-[15px] flex justify-end">
               <button
                 type="submit"
-                className="flex items-center justify-center bg-custom-orange py-[12px] px-[20px] border-[1px] border-custom-orange"
+                className="flex items-center justify-center bg-custom-orange lg:py-[12px] lg:px-[20px] md:py-[12px] md:px-[20px] sm:py-[12px] sm:px-[20px] py-[8px] px-[16px] border-[1px] border-custom-orange"
               >
-                <span className="sm:text-[12.6px]">SEND A MESSAGE</span>
+                <span className="text-[12.6px]">SEND A MESSAGE</span>
                 <FaArrowDown className="tranform -rotate-90 ml-[12px]" />
               </button>
             </div>
