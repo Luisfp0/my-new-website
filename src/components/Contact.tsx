@@ -135,7 +135,7 @@ const Contact = (props: ContactProps) => {
           <img
             src={socialChat}
             alt="Social chat icon"
-            className="w-[40px] h-[40px] mb-[24px]"
+            className="w-[40px] h-[40px] mb-[16px]"
           />
           <h5 className="mb-[8px] text-[18px] sm:text-[16px]">Social Chat</h5>
           <div className="opacity-[0.5] text-[16px]">
