@@ -29,7 +29,27 @@ const Contact = (props: ContactProps) => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    try {
+      const response = await fetch("http://localhost:3001/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert("Email enviado com sucesso!");
+      } else {
+        alert("Falha ao enviar o email.");
+      }
+    } catch (error) {
+      console.log(error)
+      console.error("Erro:", error);
+      alert("Ocorreu um erro ao enviar o email.");
+    }
+  };
   return (
     <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
       <div className="relative mb-[120px]">
