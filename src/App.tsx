@@ -159,6 +159,9 @@ function App() {
           contactNavBreakRef={contactNavBreakRef}
         />
       </section>
+        <p id="finalPrice" className="text-[50px] color-white w-full h-[500px] bg-white flex items-center justify-center">
+          R$1.399,99
+        </p>
     </div>
   );
 }
