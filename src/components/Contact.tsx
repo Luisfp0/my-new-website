@@ -8,6 +8,8 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { FaArrowDown } from "react-icons/fa";
+import { useRef, useEffect } from "react";
+import useInView from "./hooks/useInView";
 
 type Inputs = {
   name: string;
@@ -17,12 +19,20 @@ type Inputs = {
 };
 
 interface ContactProps {
-  contactNavBreakRef: React.RefObject<HTMLDivElement>;
-  contactAnimRef: React.RefObject<HTMLDivElement>;
-  isContactsAnimInView: boolean;
+  onContactInView?: (isInView: boolean) => void;
 }
 
-const Contact = (props: ContactProps) => {
+const Contact = ({ onContactInView }: ContactProps) => {
+  const contactNavRef = useRef<HTMLDivElement>(null);
+  const contactAnimRef = useRef<HTMLDivElement>(null);
+
+  const isContactNavInView = useInView(contactNavRef);
+  const isContactAnimInView = useInView(contactAnimRef);
+
+  useEffect(() => {
+    onContactInView?.(isContactAnimInView);
+  }, [isContactAnimInView, onContactInView]);
+
   const {
     register,
     handleSubmit,
@@ -45,32 +55,33 @@ const Contact = (props: ContactProps) => {
         alert("Falha ao enviar o email.");
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
       console.error("Erro:", error);
       alert("Ocorreu um erro ao enviar o email.");
     }
   };
+
   return (
     <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
       <div className="relative mb-[120px]">
         <div
           className={`${
-            props.isContactsAnimInView ? "w-[160px]" : "w-[0px]"
+            isContactAnimInView ? "w-[160px]" : "w-[0px]"
           } transition-all linear duration-500 h-[2px] absolute bg-white`}
         ></div>
         <div
           className={`${
-            props.isContactsAnimInView ? "h-[56px] delay-500" : "h-[0px]"
+            isContactAnimInView ? "h-[56px] delay-500" : "h-[0px]"
           } w-[2px] absolute lg:left-[159px] md:left-[157px] sm:left-[158px] left-[158px] bg-white transition-all linear duration-500`}
         ></div>
         <div
           className={`${
-            props.isContactsAnimInView ? "h-[56px]" : "h-[0px]"
+            isContactAnimInView ? "h-[56px]" : "h-[0px]"
           } w-[2px] absolute bg-white transition-all linear duration-500`}
         ></div>
         <div
           className={`${
-            props.isContactsAnimInView ? "w-[160px] delay-500" : "w-[0px]"
+            isContactAnimInView ? "w-[160px] delay-500" : "w-[0px]"
           } transition-all linear duration-500  h-[2px] absolute bg-white top-[55px] `}
         ></div>
         <h4 className="w-[160px] text-center text-[21px] text-white border-solid border-white py-3 px-4 relative">
@@ -78,7 +89,7 @@ const Contact = (props: ContactProps) => {
         </h4>
         <div
           className={`${
-            props.isContactsAnimInView
+            isContactAnimInView
               ? "border-b-[9px] border-l-[9px] delay-500"
               : "border-b-[0px] border-l-[0px]"
           } transition-all linear duration-500  absolute lg:top-[56px] left-[30px] md:top-[55px] sm:top-[54px] w-0 h-0 border-solid border-white border-l-transparent transform rotate-180`}
@@ -86,11 +97,11 @@ const Contact = (props: ContactProps) => {
       </div>
       <div
         className="flex w-full flex-wrap justify-center text-white"
-        ref={props.contactAnimRef}
+        ref={contactAnimRef}
       >
         <div
           className={`flex flex-col lg:items-start md:items-start sm:items-start items-center px-[15px] pb-[24px] lg:w-[25%] md:w-[25%] sm:w-[25%] w-[50%] transition linear duration-700 ${
-            props.isContactsAnimInView
+            isContactAnimInView
               ? "opacity-[1] scale-100 -translate-y-5"
               : "opacity-[0]"
           }`}
@@ -108,7 +119,7 @@ const Contact = (props: ContactProps) => {
         </div>
         <div
           className={`flex flex-col lg:items-start md:items-start sm:items-start items-center px-[15px] pb-[24px] lg:w-[25%] md:w-[25%] sm:w-[25%] xsm:w-[50%] transition linear duration-700 delay-100 ${
-            props.isContactsAnimInView
+            isContactAnimInView
               ? "opacity-[1] scale-100 -translate-y-5"
               : "opacity-[0]"
           }`}
@@ -128,7 +139,7 @@ const Contact = (props: ContactProps) => {
         </div>
         <div
           className={`flex flex-col lg:items-start md:items-start sm:items-start items-center px-[15px] pb-[24px] lg:w-[25%] md:w-[25%] sm:w-[25%] w-[50%] transition linear duration-700 delay-150 ${
-            props.isContactsAnimInView
+            isContactAnimInView
               ? "opacity-[1] scale-100 -translate-y-5"
               : "opacity-[0]"
           }`}
@@ -147,7 +158,7 @@ const Contact = (props: ContactProps) => {
         </div>
         <div
           className={`flex flex-col lg:items-start md:items-start sm:items-start items-center px-[15px] pb-[24px] lg:w-[25%] md:w-[25%] sm:w-[25%] w-[50%] transition linear duration-700 delay-200 ${
-            props.isContactsAnimInView
+            isContactAnimInView
               ? "opacity-[1] scale-100 -translate-y-5"
               : "opacity-[0]"
           }`}
@@ -217,11 +228,11 @@ const Contact = (props: ContactProps) => {
             <div className="flex w-full">
               <div
                 className="flex flex-col lg:px-[15px] md:px-[15px] sm:px-[15px] px-[3px] w-[50%] mb-[24px]"
-                ref={props.contactNavBreakRef}
+                ref={contactNavRef}
               >
                 <label className="mb-[8px] sm:text-[11.7px]">Name *</label>
                 <input
-                  {...(register("name"), { required: true })}
+                  {...register("name", { required: true })}
                   placeholder="Name"
                   className="py-[9px] px-[12px] bg-[#FFFFFF1A] hover:bg-[#FFFFFF33] duration-300"
                 />
@@ -229,7 +240,7 @@ const Contact = (props: ContactProps) => {
               <div className="flex flex-col w-[50%] lg:px-[15px] md:px-[15px] sm:px-[15px] px-[3px]">
                 <label className="mb-[8px] sm:text-[11.7px]">Email *</label>
                 <input
-                  {...(register("email"), { required: true })}
+                  {...register("email", { required: true })}
                   placeholder="Email"
                   className="py-[9px] px-[12px] border-none bg-[#FFFFFF1A] hover:bg-[#FFFFFF33] duration-300"
                 />
@@ -246,7 +257,7 @@ const Contact = (props: ContactProps) => {
             <div className="flex flex-col lg:px-[15px] md:px-[15px] sm:px-[15px] w-[100%]">
               <label className="mb-[8px] sm:text-[11.7px]">Message *</label>
               <textarea
-                {...(register("message"), { required: true })}
+                {...register("message", { required: true })}
                 placeholder="Message"
                 className="py-[9px] px-[12px] border-none bg-[#FFFFFF1A] hover:bg-[#FFFFFF33] h-[150px] duration-300"
               />

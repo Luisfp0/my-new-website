@@ -1,15 +1,37 @@
 import { FaArrowDown, FaDownload } from "react-icons/fa";
 import example from "../assets/img/examplePerfilImage.jpg";
 import curriculum from "../assets/Curriculum-Luís-Fernando.pdf";
+import { useRef, useEffect } from "react";
+import { useInView } from "framer-motion";
 
 interface AboutMeProps {
-  aboutMeNavBreakRef: React.RefObject<HTMLDivElement>;
-  hiThereAnimRef: React.RefObject<HTMLDivElement>;
-  isHiThereAnimInView: boolean;
   contactSectionRef: React.RefObject<HTMLDivElement>;
+  onAboutMeInView?: (isInView: boolean) => void;
+  onHiThereInView?: (isInView: boolean) => void;
 }
 
-const AboutMe = (props: AboutMeProps) => {
+const AboutMe = ({
+  contactSectionRef,
+  onAboutMeInView,
+  onHiThereInView,
+}: AboutMeProps) => {
+  // Criar as refs localmente
+  const aboutMeRef = useRef<HTMLDivElement>(null);
+  const hiThereRef = useRef<HTMLDivElement>(null);
+
+  // Usar o hook useInView para observar os elementos
+  const isAboutMeInView = useInView(aboutMeRef);
+  const isHiThereInView = useInView(hiThereRef);
+
+  // Notificar o componente pai sobre mudanças de visibilidade
+  useEffect(() => {
+    onAboutMeInView?.(isAboutMeInView);
+  }, [isAboutMeInView, onAboutMeInView]);
+
+  useEffect(() => {
+    onHiThereInView?.(isHiThereInView);
+  }, [isHiThereInView, onHiThereInView]);
+
   const handleScrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: "smooth" });
@@ -34,44 +56,44 @@ const AboutMe = (props: AboutMeProps) => {
       </div>
       <div className="flex flex-col items-center xsm:items-center sm:items-stretch md:items-stretch lg:items-stretch sm:flex-row md:flex-row lg:flex-row lg:h-[547px] md:h-[547px] sm:h-[480px]">
         <div className="h-full mb-[10px] lg:w-3/6 md:w-3/6 sm:w-3/6 xsm:w-4/6 lg:flex md:flex text-end">
-          <img src={example}></img>
+          <img src={example} alt="Profile" />
         </div>
         <div className="lg:w-3/6 md:w-3/6 sm:w-3/6 w-[350px] xsm:w-full flex flex-col justify-center px-8 relative">
           <div
             className={`${
-              props.isHiThereAnimInView ? "w-[120px]" : "w-[0px]"
+              isHiThereInView ? "w-[120px]" : "w-[0px]"
             } h-[2px] absolute bg-white lg:top-[70px] md:top-[60px] sm:top-[3px] xsm:top-[1px] top-0 transition-all linear duration-500`}
           ></div>
           <div
             className={`${
-              props.isHiThereAnimInView ? "h-[55px] delay-500" : "h-[0px]"
+              isHiThereInView ? "h-[55px] delay-500" : "h-[0px]"
             } absolute bg-white left-[150px] lg:top-[70px] md:top-[62px] w-[2px] sm:top-[3px] xsm:top-[1px] top-0 transition-all linear duration-500`}
           ></div>
           <div
             className={`${
-              props.isHiThereAnimInView ? "h-[57px]" : "h-[0px]"
+              isHiThereInView ? "h-[57px]" : "h-[0px]"
             } absolute lg:top-[70px] w-[2px] md:top-[62px] bg-white sm:left-[30px] sm:top-[3px] xsm:top-[1px] top-0 transition-all linear duration-500`}
           ></div>
           <div
             className={`${
-              props.isHiThereAnimInView ? "w-[120px] delay-500" : "w-[0px]"
+              isHiThereInView ? "w-[120px] delay-500" : "w-[0px]"
             } absolute bg-white lg:top-[125px] md:top-[116px] sm:top-[58px] top-[55px] h-[2px] transition-all linear duration-500 `}
           ></div>
           <h4
-            ref={props.hiThereAnimRef}
+            ref={hiThereRef}
             className="w-[120px] text-center mb-4 sm:text-[21px] text-[24px] text-white border-solid border-white py-3 px-4 relative"
           >
             Hi there
           </h4>
           <div
             className={`${
-              props.isHiThereAnimInView
+              isHiThereInView
                 ? "border-b-[9px] border-l-[9px] transition-all linear duration-500 delay-500"
                 : "border-b-[0px] border-l-[0px] transition-all linear duration-500"
             } absolute lg:top-[127px] left-[50px] md:top-[118px] sm:top-[59px] top-[57px] w-0 h-0 border-solid border-white border-l-transparent transform rotate-180`}
           ></div>
           <p
-            ref={props.aboutMeNavBreakRef}
+            ref={aboutMeRef}
             className="text-white opacity-50 mb-4 sm:text-[14.4px] sm:mb-[27px] text-[13.8px] mt-[15px]"
           >
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -113,11 +135,11 @@ const AboutMe = (props: AboutMeProps) => {
               </dd>
             </div>
           </dl>
-          <hr className="mt-[16px] mb-[48px] opacity-[0.3]"></hr>
+          <hr className="mt-[16px] mb-[48px] opacity-[0.3]" />
           <div className="flex gap-5 text-white text-[14px]">
             <div
               className="relative group overflow-hidden flex"
-              onClick={() => handleScrollToSection(props.contactSectionRef)}
+              onClick={() => handleScrollToSection(contactSectionRef)}
             >
               <a className="absolute right-[200px] lg:right-[221px] md:right-[220px] sm:right-[220px] xsm:right-[220px] cursor-pointer flex items-center justify-center h-[45px] w-[220px] bg-[#d44229] lg:group-hover:translate-x-[221px] md:group-hover:translate-x-[235px] sm:group-hover:translate-x-[262px] transition-all duration-300">
                 <span className="sm:text-[12.6px] md:sm:text-[12.6px] lg:sm:text-[13.3px]">

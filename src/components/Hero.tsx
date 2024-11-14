@@ -6,13 +6,22 @@ import {
 } from "react-icons/fa";
 import mouseImage from "../assets/img/mouse.svg";
 import Presentation from "./Presentation";
+import { useEffect, useRef } from "react";
+import useInView from "./hooks/useInView";
 
 interface HeroProps {
-  homeNavBreakRef: React.RefObject<HTMLDivElement>;
   aboutMeSectionRef: React.RefObject<HTMLDivElement>;
+  onHomeInView?: (isInView: boolean) => void;
 }
 
-const Hero = (props: HeroProps) => {
+const Hero = ({ aboutMeSectionRef, onHomeInView }: HeroProps) => {
+  const homeRef = useRef<HTMLDivElement>(null);
+  const isHomeInView = useInView(homeRef);
+
+  useEffect(() => {
+    onHomeInView?.(isHomeInView);
+  }, [isHomeInView, onHomeInView]);
+
   const handleScrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: "smooth" });
@@ -22,10 +31,7 @@ const Hero = (props: HeroProps) => {
   return (
     <div className="container flex justify-center items-center w-full lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px] h-screen mx-auto">
       <div className="w-full">
-        <figure
-          className="flex mb-6 md:mb-5 sm:mb-[21.6px]"
-          ref={props.homeNavBreakRef}
-        >
+        <figure className="flex mb-6 md:mb-5 sm:mb-[21.6px]" ref={homeRef}>
           <a
             href="https://github.com/Luisfp0"
             target="_blank"
@@ -88,9 +94,9 @@ const Hero = (props: HeroProps) => {
         <Presentation />
         <a
           className="flex justify-center items-center absolute bottom-10 animate-bounceSlow cursor-pointer"
-          onClick={() => handleScrollToSection(props.aboutMeSectionRef)}
+          onClick={() => handleScrollToSection(aboutMeSectionRef)}
         >
-          <img src={mouseImage} alt="Scrow down mouse" />
+          <img src={mouseImage} alt="Scroll down mouse" />
         </a>
       </div>
     </div>

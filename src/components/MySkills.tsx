@@ -1,23 +1,41 @@
+import { useRef, useEffect, useState } from "react";
+import useInView from "./hooks/useInView";
+
 interface MySkillsProps {
-  mySkillsNavBreakRef: React.RefObject<HTMLDivElement>;
-  skillsAnimRef: React.RefObject<HTMLDivElement>;
-  isSkillsAnimInView: boolean;
   contactSectionRef: React.RefObject<HTMLDivElement>;
+  onSkillsInView?: (isInView: boolean) => void;
 }
 
-const MySkills = (props: MySkillsProps) => {
+const MySkills = ({ contactSectionRef, onSkillsInView }: MySkillsProps) => {
+  const skillsRef = useRef<HTMLDivElement>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const isSkillsInView = useInView(skillsRef);
+
+  useEffect(() => {
+    if (isSkillsInView && !hasAnimated) {
+      setHasAnimated(true);
+    }
+  }, [isSkillsInView]);
+
+  useEffect(() => {
+    onSkillsInView?.(isSkillsInView);
+  }, [isSkillsInView, onSkillsInView]);
+
   const handleScrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const getAnimationClass = () => {
+    if (!hasAnimated) return false;
+    return hasAnimated;
+  };
+
   return (
     <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
       <div className="w-full lg:mb-[80px] md:mb-[60] sm:mb-[45px] xsm:mb-[40px] mb-[40px] text-center">
-        <h2
-          className="lg:text-[36px] md:text-[30.4px] xsm:text-[25px] text-[25px] mb-[8px] text-white sm:text-[27px]"
-          ref={props.mySkillsNavBreakRef}
-        >
+        <h2 className="lg:text-[36px] md:text-[30.4px] xsm:text-[25px] text-[25px] mb-[8px] text-white sm:text-[27px]">
           My Skills
         </h2>
       </div>
@@ -25,7 +43,7 @@ const MySkills = (props: MySkillsProps) => {
         Every Day is a New Challenge
       </h4>
       <div
-        ref={props.skillsAnimRef}
+        ref={skillsRef}
         className="flex lg:flex-row md:flex-row sm:flex-row flex-col text-white"
       >
         <div className="lg:w-3/6 md:w-3/6 sm:w-3/6 w-full text-[16px] px-[15px] lg:mb-0 md:mb-0 sm:mb-[35px] mb-[50px]">
@@ -42,7 +60,7 @@ const MySkills = (props: MySkillsProps) => {
             cupiditate vel minus delectus beatae!
           </p>
           <a
-            onClick={() => handleScrollToSection(props.contactSectionRef)}
+            onClick={() => handleScrollToSection(contactSectionRef)}
             className="cursor-pointer text-[14px] py-[12px] px-[20px] border-[2px] mb-[48px] sm:text-[12.6px] hover:bg-white hover:text-custom-gray duration-300"
           >
             CONTACT ME
@@ -53,7 +71,7 @@ const MySkills = (props: MySkillsProps) => {
             <h5 className="mb-[8px]">Webdesign</h5>
             <div
               className={`${
-                props.isSkillsAnimInView
+                getAnimationClass()
                   ? "right-[50px]"
                   : "lg:right-[445px] md:right-[350px] sm:right-[230px] right-[200px]"
               } absolute transition-all ease-in duration-1000`}
@@ -65,7 +83,7 @@ const MySkills = (props: MySkillsProps) => {
             </div>
             <div
               className={`${
-                props.isSkillsAnimInView
+                getAnimationClass()
                   ? "w-[95%]"
                   : "lg:w-[15%] md:w-[25%] sm:w-[30%] w-[20%]"
               } h-[2px] bg-custom-orange transition-all ease-in duration-1000`}
@@ -75,7 +93,7 @@ const MySkills = (props: MySkillsProps) => {
             <h5 className="mb-[8px]">Webdesign</h5>
             <div
               className={`${
-                props.isSkillsAnimInView
+                getAnimationClass()
                   ? "lg:right-[130px] md:right-[110px] sm:right-[85px] xsm:right-[120px] right-[80px]"
                   : "lg:right-[445px] md:right-[350px] sm:right-[230px] right-[200px]"
               } absolute transition-all ease-in duration-1000`}
@@ -87,7 +105,7 @@ const MySkills = (props: MySkillsProps) => {
             </div>
             <div
               className={`${
-                props.isSkillsAnimInView
+                getAnimationClass()
                   ? "w-[80%]"
                   : "lg:w-[15%] md:w-[25%] sm:w-[30%] w-[20%]"
               } h-[2px] bg-custom-orange transition-all ease-in duration-1000`}
@@ -97,7 +115,7 @@ const MySkills = (props: MySkillsProps) => {
             <h5 className="mb-[8px]">Webdesign</h5>
             <div
               className={`${
-                props.isSkillsAnimInView
+                getAnimationClass()
                   ? "lg:right-[85px] md:right-[70px] sm:right-[50px] xsm:right-[70px] right-[50px]"
                   : "lg:right-[445px] md:right-[350px] sm:right-[230px] right-[200px]"
               } absolute transition-all ease-in duration-1000`}
@@ -109,7 +127,7 @@ const MySkills = (props: MySkillsProps) => {
             </div>
             <div
               className={`${
-                props.isSkillsAnimInView
+                getAnimationClass()
                   ? "w-[90%]"
                   : "lg:w-[15%] md:w-[25%] sm:w-[30%] w-[20%]"
               } h-[2px] bg-custom-orange transition-all ease-in duration-1000`}
@@ -119,7 +137,7 @@ const MySkills = (props: MySkillsProps) => {
             <h5 className="mb-[8px]">Webdesign</h5>
             <div
               className={`${
-                props.isSkillsAnimInView
+                getAnimationClass()
                   ? "lg:right-[235px] md:right-[195px] sm:right-[145px] xsm:right-[215px] right-[140px]"
                   : "lg:right-[445px] md:right-[350px] sm:right-[230px] right-[200px]"
               } absolute transition-all ease-in duration-1000`}
@@ -131,7 +149,7 @@ const MySkills = (props: MySkillsProps) => {
             </div>
             <div
               className={`${
-                props.isSkillsAnimInView
+                getAnimationClass()
                   ? "w-[60%]"
                   : "lg:w-[15%] md:w-[25%] sm:w-[30%] w-[20%]"
               } h-[2px] bg-custom-orange transition-all ease-in duration-1000`}
