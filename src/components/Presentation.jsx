@@ -27,7 +27,7 @@ function Presentation() {
           ref={ref}
         />
       </div>
-      <div className="absolute w-0 h-0 border-solid border-white sm:border-b-[9px] sm:border-l-[9px] border-b-[9px] border-l-[9px] lg:border-b-19 lg:border-l-19 border-l-transparent left-10 -bottom-2 md:-bottom-4 sm:-bottom-2 xsm:-bottom-[7px] lg:-bottom-4 transform rotate-180"></div>
+      <div className="absolute w-0 h-0 border-solid border-white sm:border-b-[9px] sm:border-l-[9px] border-b-[9px] border-l-[9px] lg:border-b-19 lg:border-l-19 border-l-transparent left-10 -bottom-2 md:-bottom-2 sm:-bottom-2 xsm:-bottom-[7px] lg:-bottom-4 transform rotate-180"></div>
     </div>
   );
 }
