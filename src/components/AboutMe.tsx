@@ -15,15 +15,12 @@ const AboutMe = ({
   onAboutMeInView,
   onHiThereInView,
 }: AboutMeProps) => {
-  // Criar as refs localmente
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const hiThereRef = useRef<HTMLDivElement>(null);
 
-  // Usar o hook useInView para observar os elementos
   const isAboutMeInView = useInView(aboutMeRef);
   const isHiThereInView = useInView(hiThereRef);
 
-  // Notificar o componente pai sobre mudanças de visibilidade
   useEffect(() => {
     onAboutMeInView?.(isAboutMeInView);
   }, [isAboutMeInView, onAboutMeInView]);
@@ -50,12 +47,12 @@ const AboutMe = ({
   return (
     <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px] mx-auto flex flex-col justify-center items-center">
       <div className="flex justify-center mb-8">
-        <h2 className="text-3xl text-white sm:text-[27px] lg:text-[36px] md:text-[30px]">
+        <h2 className="z-10 text-3xl text-white sm:text-[27px] lg:text-[36px] md:text-[30px]">
           About Me
         </h2>
       </div>
       <div className="flex flex-col items-center xsm:items-center sm:items-stretch md:items-stretch lg:items-stretch sm:flex-row md:flex-row lg:flex-row lg:h-[547px] md:h-[547px] sm:h-[480px]">
-        <div className="h-full mb-[10px] lg:w-3/6 md:w-3/6 sm:w-3/6 xsm:w-4/6 lg:flex md:flex text-end">
+        <div className="z-10 h-full mb-[10px] lg:w-3/6 md:w-3/6 sm:w-3/6 xsm:w-4/6 lg:flex md:flex text-end">
           <img src={example} alt="Profile" />
         </div>
         <div className="lg:w-3/6 md:w-3/6 sm:w-3/6 w-[350px] xsm:w-full flex flex-col justify-center px-8 relative">

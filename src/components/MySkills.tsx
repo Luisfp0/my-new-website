@@ -33,8 +33,8 @@ const MySkills = ({ contactSectionRef, onSkillsInView }: MySkillsProps) => {
   };
 
   return (
-    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
-      <div className="w-full lg:mb-[80px] md:mb-[60] sm:mb-[45px] xsm:mb-[40px] mb-[40px] text-center">
+    <div className="z-10 lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
+      <div className=" w-full lg:mb-[80px] md:mb-[60] sm:mb-[45px] xsm:mb-[40px] mb-[40px] text-center">
         <h2 className="lg:text-[36px] md:text-[30.4px] xsm:text-[25px] text-[25px] mb-[8px] text-white sm:text-[27px]">
           My Skills
         </h2>

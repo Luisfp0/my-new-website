@@ -62,7 +62,7 @@ const Contact = ({ onContactInView }: ContactProps) => {
   };
 
   return (
-    <div className="lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
+    <div className="z-10 lg:max-w-[1150px] md:max-w-[960px] sm:max-w-[720px] xsm:max-w-[540px] max-w-[350px] flex flex-col justify-center items-center mx-auto w-full px-[15px]">
       <div className="relative mb-[120px]">
         <div
           className={`${
@@ -188,7 +188,7 @@ const Contact = ({ onContactInView }: ContactProps) => {
               rel="noopener noreferrer"
               className="flex items-center justify-start mb-[16px] lg:w-auto md:w-auto sm:w-auto w-1/2"
             >
-              <FiGithub className="rounded-full border-[1px] border-opacity-[0.5] w-[40px] h-[40px] py-[5px] px-[5px] mr-[24px]" />
+              <FiGithub className="rounded-full border-[1px] border-opacity-[0.5] w-[40px] h-[40px] py-[5px] px-[5px] mr-[24px] transition-all duration-100 ease-in-out hover:w-[42px] hover:h-[42px]" />
               <span className="text-[16px] sm:text-[14.4px]">Github</span>
             </a>
             <a
@@ -197,7 +197,7 @@ const Contact = ({ onContactInView }: ContactProps) => {
               rel="noopener noreferrer"
               className="flex items-center justify-start mb-[16px] lg:w-auto md:w-auto sm:w-auto w-1/2"
             >
-              <FaLinkedin className="rounded-full border-[1px] border-opacity-[0.5] w-[35px] h-[35px] py-[5px] px-[5px] mr-[24px]" />
+              <FaLinkedin className="rounded-full border-[1px] border-opacity-[0.5] w-[40px] h-[40px] py-[5px] px-[5px] mr-[24px] hover:w-[42px] hover:h-[42px] transition-all duration-100 ease-in-out" />
               <span className="text-[16px] sm:text-[14.4px]">Linkedin</span>
             </a>
             <a
@@ -206,7 +206,7 @@ const Contact = ({ onContactInView }: ContactProps) => {
               rel="noopener noreferrer"
               className="flex items-center justify-start mb-[16px] lg:w-auto md:w-auto sm:w-auto w-1/2"
             >
-              <CiInstagram className="rounded-full border-[1px] border-opacity-[0.5] w-[40px] h-[40px] py-[5px] px-[5px] mr-[24px]" />
+              <CiInstagram className="rounded-full border-[1px] border-opacity-[0.5] w-[40px] h-[40px] py-[5px] px-[5px] mr-[24px] hover:w-[42px] hover:h-[42px] transition-all duration-100 ease-in-out" />
               <span className="text-[16px] sm:text-[14.4px]">Instagram</span>
             </a>
             <a
@@ -215,7 +215,7 @@ const Contact = ({ onContactInView }: ContactProps) => {
               rel="noopener noreferrer"
               className="flex items-center justify-start mb-[16px] lg:w-auto md:w-auto sm:w-auto w-1/2"
             >
-              <FaXTwitter className="rounded-full border-[1px] border-opacity-[0.5] w-[40px] h-[40px] py-[5px] px-[5px] mr-[24px]" />
+              <FaXTwitter className="rounded-full border-[1px] border-opacity-[0.5] w-[40px] h-[40px] py-[5px] px-[5px] mr-[24px] hover:w-[42px] hover:h-[42px] transition-all duration-100 ease-in-out" />
               <span className="text-[16px] sm:text-[14.4px]">Twitter</span>
             </a>
           </div>
