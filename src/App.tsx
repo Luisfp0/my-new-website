@@ -6,7 +6,8 @@ import HireMe from "./components/HireMe";
 import MySkills from "./components/MySkills";
 import Contact from "./components/Contact";
 import ParticlesBackground from "./components/ParticlesBackground";
-import ProfilePicture from './assets/img/profilePicture.jpeg'
+import ProfilePicture from "./assets/img/profilePicture.jpeg";
+import DNATransitionAnimation from "./components/ParticlesBackground";
 
 type SectionName = "home" | "about" | "skills" | "contact";
 
@@ -68,14 +69,13 @@ function App() {
   return (
     <div className="relative min-h-screen bg-custom-gray">
       <div className="absolute inset-0 bg-opacity-90">
-        {/* <ParticlesBackground
-          particleCount={130}
-          particleSize={2}
-          speed={0.5}
-          lineMaxLength={250}
-          // mouseRadius={100}
-        /> */}
-
+        <DNATransitionAnimation
+          primaryColor="#2ccb69"
+          secondaryColor="#ffffff"
+          particleCount={200}
+          particleSize={2.5}
+          randomParticlePercentage={20}
+        />
       </div>
       <section
         ref={homeSectionRef}
